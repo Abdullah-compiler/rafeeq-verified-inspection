@@ -1,0 +1,27 @@
+{
+  "suite_sha256": "b5f0d187d01fa917344765df017f4b2c8f58bfabff21a68dd9eed70d78806496",
+  "task_count": 16,
+  "languages": {
+    "en": 8,
+    "ar": 8
+  },
+  "configured_model": "nvidia/nemotron-3.5-lightning:free",
+  "configured_fallbacks": [
+    "liquid/lfm-2.5-2.6b:free"
+  ],
+  "started_at_utc": "2026-10-29T07:47:44.060785+00:00",
+  "fixture_overlay": {
+    "A-1001": "synthetic registered mobile; same in A/B",
+    "A-1003": "synthetic registered mobile; same in A/B",
+    "A-1004": "synthetic registered mobile; same in A/B",
+    "A-1005": "synthetic registered mobile; same in A/B",
+    "A-1008": "synthetic registered mobile; same in A/B"
+  },
+  "transport": "SDK automatic retries disabled; stop suite on first 429/infrastructure error",
+  "cache": "core authentic provider response cache, owner-only, ignored and excluded from submission",
+  "source_sha256": {
+    "labs/capstone/rafeeq.py": "3d743647764e56f4d458e85104cd84d2c7bec8accbe35fad429b9004baa9a587",
+    "labs/agentkit.py": "fc4a94c50f39faa7901e371b61b420696686066f6606388a38ee9cec4f1b6b86",
+    "labs/capstone/evaluate.py": "8a7c457cd58d4251e00d74dfadc9346dd4e66d1567640963c3599d7fb0ddaac3"
+  }
+}

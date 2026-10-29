@@ -1,0 +1,450 @@
+{
+  "project": "Rafeeq / Verified Inspection Desk",
+  "submission_ready": false,
+  "task_count": 16,
+  "files": [
+    {
+      "path": ".env.example",
+      "bytes": 559,
+      "sha256": "6f71e81e007fac64ad7a0fd4b5d7a008262a08e71ca6079e0635729d758e4db8"
+    },
+    {
+      "path": ".github/workflows/rafeeq-checks.yml",
+      "bytes": 635,
+      "sha256": "fb53ccf368e2a14e47a367af390c702ea312ea8f258990eec00c560f5aae0cbb"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 278,
+      "sha256": "9f42d12a01bcc3ca0bedd090a4f31973625a5cb4fe96802d16ab6bf97659c8ff"
+    },
+    {
+      "path": ".python-version",
+      "bytes": 5,
+      "sha256": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d"
+    },
+    {
+      "path": "COURSE_README.md",
+      "bytes": 10717,
+      "sha256": "d395c06a14dc3557a1b3378ee33d34e51840f474b746182c729488b49bdfeca3"
+    },
+    {
+      "path": "README.md",
+      "bytes": 10674,
+      "sha256": "8bf819ad75bbd9502f71b40d005f6a1135c0689bb3e0fe0a45f41f27c7add442"
+    },
+    {
+      "path": "START_RAFEEQ.command",
+      "bytes": 458,
+      "sha256": "f89a68da3edf1d701267f3c7c830cce6b4a2b3c169daf922c78a626fe01fb184"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 2798,
+      "sha256": "93a00836185a2922f5faa51a05adb06993856d969d4d5d541cc4f06983aa3bcc"
+    },
+    {
+      "path": "docs/API.md",
+      "bytes": 14982,
+      "sha256": "1283c8a583b6539328f587727045772758f1cc1d34d72147c3623f6494a59fc0"
+    },
+    {
+      "path": "docs/EVALUATION.md",
+      "bytes": 14050,
+      "sha256": "a7a1c0ab69ae4b8d4f46028a2a9597700af8f0f395cdb0f5adfe8dedfc044b71"
+    },
+    {
+      "path": "docs/SECURITY.md",
+      "bytes": 5079,
+      "sha256": "e028b25704171546ad20a466fec85dae51e4dff8abee8bb4051f5466ab790772"
+    },
+    {
+      "path": "docs/SPEAKER_NOTES.md",
+      "bytes": 4596,
+      "sha256": "4e1f27dde781ab54017c84f6a3fd50abea9822dcc62c5cbb38d628607d8ca7f6"
+    },
+    {
+      "path": "docs/demo-replay.html",
+      "bytes": 8132,
+      "sha256": "31a5dbcbc87a6dc522eb67677c2aa62f368832780e61645d42375d8305ae381d"
+    },
+    {
+      "path": "docs/publication.json",
+      "bytes": 268,
+      "sha256": "6ff858c7a81a7786a2487d45fedb602bb8aa553639b919b8d6147cd426da125e"
+    },
+    {
+      "path": "docs/slides-contact.png",
+      "bytes": 164131,
+      "sha256": "0e25f8ce43eaf52414f448f8aa15d44362aa2d62fd6fc09d581b3b9976398b97"
+    },
+    {
+      "path": "docs/slides.html",
+      "bytes": 5084,
+      "sha256": "ef0c1e3e36b19eadc017a97bc1fd1290e41986c0113641a3597dfa3347011560"
+    },
+    {
+      "path": "docs/slides.pdf",
+      "bytes": 11259,
+      "sha256": "78f016d5b00e738b3cc472e1ea5301f769f1986da2aff77a8de5fa8e776a8b5d"
+    },
+    {
+      "path": "labs/.env.example",
+      "bytes": 1233,
+      "sha256": "4ad82c5455cbc6fd5168716574e02e6e897193101db835e021cd69e7d4632fd2"
+    },
+    {
+      "path": "labs/agentkit.py",
+      "bytes": 33370,
+      "sha256": "fc4a94c50f39faa7901e371b61b420696686066f6606388a38ee9cec4f1b6b86"
+    },
+    {
+      "path": "labs/capstone/README.md",
+      "bytes": 4939,
+      "sha256": "8eca7767617fe3190c0b0a24fe5ca87f0b184eb7c7aeef9cd9f243ce2cb72aee"
+    },
+    {
+      "path": "labs/capstone/TEMPLATE_README.md",
+      "bytes": 2265,
+      "sha256": "8b97aab348ea48856447ce289aba3a92010a6197a3cc824887ee9c1c37b182d9"
+    },
+    {
+      "path": "labs/capstone/api.py",
+      "bytes": 26145,
+      "sha256": "f6dd9505c21f16dd342c5a9501d9d64cc14139843d906619660e8842eef91121"
+    },
+    {
+      "path": "labs/capstone/checks.py",
+      "bytes": 1510,
+      "sha256": "c10dc41e1d1fde8108aeba167564113ff968b3ab8b1e9f5394c052ccd6129e55"
+    },
+    {
+      "path": "labs/capstone/evaluate.py",
+      "bytes": 25699,
+      "sha256": "cab28c27f776a6f44064850b0cd65ac977ada61ac9ca72fc92b9cf915110b6a1"
+    },
+    {
+      "path": "labs/capstone/policies_mcp.py",
+      "bytes": 1623,
+      "sha256": "add590dae069c9218707bc286a837b58d42148bc01bac3311ccbde8103079c7d"
+    },
+    {
+      "path": "labs/capstone/rafeeq.py",
+      "bytes": 23315,
+      "sha256": "3d743647764e56f4d458e85104cd84d2c7bec8accbe35fad429b9004baa9a587"
+    },
+    {
+      "path": "labs/capstone/redteam.py",
+      "bytes": 6760,
+      "sha256": "f435718c60396f9e5565d5701b01d36536e8e1e96bf442ae1c06bd92cafefd25"
+    },
+    {
+      "path": "labs/capstone/starter.py",
+      "bytes": 6927,
+      "sha256": "1b274bd6a6dd634ce0eaa1178cd5cbefbb00b5c4d4178cffedc9da29e1706cbf"
+    },
+    {
+      "path": "labs/capstone/tasks.jsonl",
+      "bytes": 9645,
+      "sha256": "b5f0d187d01fa917344765df017f4b2c8f58bfabff21a68dd9eed70d78806496"
+    },
+    {
+      "path": "labs/capstone/tests/test_api.py",
+      "bytes": 30797,
+      "sha256": "572c2f6a1f2a41331008e8713b6189e6eeda9333891a752a173756d7e1a719d3"
+    },
+    {
+      "path": "labs/capstone/tests/test_booking.py",
+      "bytes": 12251,
+      "sha256": "b198f4322713bc0191db00b448c45fc82d55c60cf2eeb02555724854f9e73007"
+    },
+    {
+      "path": "labs/capstone/tests/test_evaluation.py",
+      "bytes": 10957,
+      "sha256": "2921ebd9aaf05f90888d6321b31a7fed09ed618fe259ed8eb13670f1fa1a8c30"
+    },
+    {
+      "path": "labs/capstone/tests/test_mcp.py",
+      "bytes": 3503,
+      "sha256": "780d460c764db0b416f8ddda125b2d764969eafeab73e1a887485e8a57db3b80"
+    },
+    {
+      "path": "labs/capstone/tests/test_review_regressions.py",
+      "bytes": 5310,
+      "sha256": "4f21b38b6c8eeae215a4b86c67a66362aea4a6dc04784122f6ab00ed6a4e695a"
+    },
+    {
+      "path": "labs/capstone/tests/test_security.py",
+      "bytes": 2523,
+      "sha256": "e8bd67e1b2d87eb78885b780d37eb48de15085496ccf61b1630f9293a6789b81"
+    },
+    {
+      "path": "labs/data/AGENTS.md",
+      "bytes": 1517,
+      "sha256": "93edf4aa27e425af03bfdc163453ccc215fdba5428111f92891b41a65cb65994"
+    },
+    {
+      "path": "labs/data/policies/01_permit_types.md",
+      "bytes": 3295,
+      "sha256": "ae80b002c18ae2f219ebc684f4f65fd077ec31bdc48f7386c271798b9ca1edf0"
+    },
+    {
+      "path": "labs/data/policies/02_fees.md",
+      "bytes": 2301,
+      "sha256": "7f6cf66294f5887fece22dba3d050c0c5ab1c54bdef8ed62d742e21a89df7e3e"
+    },
+    {
+      "path": "labs/data/policies/03_service_levels.md",
+      "bytes": 2014,
+      "sha256": "ad1f4affbeb7f4096b9c9f7d91ba4c7989978d774ebec812c91caff7f36d1f02"
+    },
+    {
+      "path": "labs/data/policies/04_application_lifecycle.md",
+      "bytes": 1944,
+      "sha256": "72aaaa812ced840a0d003a296d868b6a371e1b07f5c74d138a564a101fad1d01"
+    },
+    {
+      "path": "labs/data/policies/05_inspections.md",
+      "bytes": 1477,
+      "sha256": "14d9be62993e8a8e19f70afcd1389cfd56f7f23bc8c7c9ef57bc4084672b896a"
+    },
+    {
+      "path": "labs/data/policies/06_appeals_refunds.md",
+      "bytes": 1691,
+      "sha256": "9a2f53d116c2273a40bc9d57256d49ca5e9736655a9e8b9de14c95e8e059d52d"
+    },
+    {
+      "path": "labs/data/policies/07_violations.md",
+      "bytes": 1313,
+      "sha256": "b7d7a42e372a37f4ad5399f9b9fcbb56c15c4de2a37716bc8ea8d02ea64d3c9c"
+    },
+    {
+      "path": "labs/data/policies/08_privacy_identity.md",
+      "bytes": 2266,
+      "sha256": "bd4148b6a9948cb5451dee522130df3a76213096e9e32a5c73ec1ae0d951af95"
+    },
+    {
+      "path": "labs/data/policies/09_food_truck_zones.md",
+      "bytes": 1185,
+      "sha256": "68e30f3f275358bc71046da17209925f2126fea6626340bb5eb6c6594472e14a"
+    },
+    {
+      "path": "labs/data/policies/10_assistant_scope.md",
+      "bytes": 1802,
+      "sha256": "9c7789800bba736a9f1b34a829bf34ad9f4d70e28e1e10b3cacc4557da170c65"
+    },
+    {
+      "path": "labs/madar.py",
+      "bytes": 23834,
+      "sha256": "4b4fbe5557a08f3834ccfc9e617a4499b180e1e712cfc2e2f9bdde2db407d0bb"
+    },
+    {
+      "path": "labs/prepare_data.py",
+      "bytes": 23128,
+      "sha256": "49520c8b4aeda4f5c4da3517aac9ed810a9783157696b05f74a69b9492369a15"
+    },
+    {
+      "path": "rafeeq.py",
+      "bytes": 1344,
+      "sha256": "cf74ae57b2520b7391f4da1622e71b333de826b8ac2eb78047407558878f2cf6"
+    },
+    {
+      "path": "rafeeq.py.lock",
+      "bytes": 164333,
+      "sha256": "f34d09b1fca9e4101a3703bb4b12e2532ba71070b4e5d577cf990dbf5909d714"
+    },
+    {
+      "path": "results/api-live-smoke.json",
+      "bytes": 211,
+      "sha256": "5e12368e9b0060ec09775f4598c93b77fd9c0970838ff19950a020c7667915ed"
+    },
+    {
+      "path": "results/booking-approve-initial.json",
+      "bytes": 6200,
+      "sha256": "ad0ea0e4f264dc82e753863278486281351b96d1d02bdedbddd6d8b00f0cb12e"
+    },
+    {
+      "path": "results/booking-approve-reviewed.json",
+      "bytes": 5862,
+      "sha256": "c99d12693031002e7aa3f705f7df2265c582899f8f2d437ef12ef8a13b8fb7bf"
+    },
+    {
+      "path": "results/booking-approve.json",
+      "bytes": 5030,
+      "sha256": "131fe04152dda060b55a7c038d726d5d973d86a15e21f0e43d0aa8aaa15d8890"
+    },
+    {
+      "path": "results/booking-reject-initial.json",
+      "bytes": 4801,
+      "sha256": "4f97181c36fd13c0584cbfc98481473ceeb16ae2b15a4571b35a4cb396484eb1"
+    },
+    {
+      "path": "results/booking-reject-reviewed.json",
+      "bytes": 6395,
+      "sha256": "554b1ac53dfacbf517aaaccb579845d2510bc92f279c43144ec2c8d08b89829e"
+    },
+    {
+      "path": "results/booking-reject.json",
+      "bytes": 6062,
+      "sha256": "54afd6dbd12e3d3a08af368019ac28a464fefbc986954dd394ea689702071d4b"
+    },
+    {
+      "path": "results/booking-verification-reviewed.json",
+      "bytes": 1029,
+      "sha256": "e771fd54e6eb7d9c104ea919368446fe508a28a0b3125f4d16f87ed3e1dbe257"
+    },
+    {
+      "path": "results/booking-verification.json",
+      "bytes": 919,
+      "sha256": "0588667c502556144ad810d9aeffea215604bcf8155e7ce49643706fb3041204"
+    },
+    {
+      "path": "results/clean-copy.json",
+      "bytes": 4127,
+      "sha256": "fe354eefcba8ad735dcb8f7abb7138b3dc29882a70e6028085905f1b2f30c834"
+    },
+    {
+      "path": "results/evaluation/A.csv",
+      "bytes": 813,
+      "sha256": "e5406375e1076015227558a2aeb0a85bab6ab3285152cc8238f479c48da78f0d"
+    },
+    {
+      "path": "results/evaluation/B.csv",
+      "bytes": 605,
+      "sha256": "375fe5b0193ec5101089018d7071879f08fec556a4ac4c1f529b4e77d4e3a32d"
+    },
+    {
+      "path": "results/evaluation/error-analysis.md",
+      "bytes": 1169,
+      "sha256": "bcca4e6480e3ea7df71e92c8067712a4861031ae86887d5c9edf1e9df70fa0cd"
+    },
+    {
+      "path": "results/evaluation/grader-tests.json",
+      "bytes": 2903,
+      "sha256": "763724241342a163d5799d6d017b39b29b4f3b14d65848642ba2593ce06bcf12"
+    },
+    {
+      "path": "results/evaluation/grader-tests.txt",
+      "bytes": 2635,
+      "sha256": "7542858a7dac8b2a13f9372559378f487231233bed7e99bb93ec8a32d342cbf4"
+    },
+    {
+      "path": "results/evaluation/manifest.json",
+      "bytes": 1168,
+      "sha256": "586a52fdea89a66d90d2fde3ddb2282f26a2c4328488acbba44c41565236e38f"
+    },
+    {
+      "path": "results/evaluation/prior-attempts/health-approve-en-A-1793260064060311000.json",
+      "bytes": 1465,
+      "sha256": "e3b2a5d0dd4257e0d9947748779b2f32ebbfb955dc56b45341ee0a6de0c2e09c"
+    },
+    {
+      "path": "results/evaluation/progress.json",
+      "bytes": 3589,
+      "sha256": "3e4e852c257a96fc30b0697cbbf52f3c944e4272b761d1e8b0a6e88534d6695a"
+    },
+    {
+      "path": "results/evaluation/reports/A/foundation-deny-ar.json",
+      "bytes": 10952,
+      "sha256": "119999488cbef18b0f78f30985bb8ba5992fbbce3e37048240ba299e1da8af4b"
+    },
+    {
+      "path": "results/evaluation/reports/A/health-approve-en.json",
+      "bytes": 10304,
+      "sha256": "1e2bbb4e94f8207393353321b677e3bbc29e9976b6e08b1270a078446780315c"
+    },
+    {
+      "path": "results/evaluation/reports/A/health-deny-en.json",
+      "bytes": 10780,
+      "sha256": "6d2869ca579ee6d123f185a5c7f2e156f8fb62a286dd15db244191f9a5b0977c"
+    },
+    {
+      "path": "results/evaluation/reports/B/foundation-deny-ar.json",
+      "bytes": 10138,
+      "sha256": "2376fbf841fa648699c2623a75ae1bd3069a445133955bc7af6edcfd6b0009ce"
+    },
+    {
+      "path": "results/evaluation/reports/B/health-approve-en.json",
+      "bytes": 10015,
+      "sha256": "6d7e7deddebba49be484f64943baec8dbc611cce0266190a307cf4e85fe6c645"
+    },
+    {
+      "path": "results/evaluation/summary.json",
+      "bytes": 6101,
+      "sha256": "453e0ab5e12b55cda301590d0d429f60af80353f8e0d0fb42ef14407efb3e3df"
+    },
+    {
+      "path": "results/evaluation/verification.json",
+      "bytes": 3444,
+      "sha256": "27afe7c6d2e333a14ca092dfe9fc6adfde07fce33a43da99bb1b26a6c5b4df4e"
+    },
+    {
+      "path": "results/offline-tests.json",
+      "bytes": 173,
+      "sha256": "e41bcc5118d5eaa8bf0ad0e8f410ef6c5261ba5a057e7546d1795148f483edee"
+    },
+    {
+      "path": "results/offline-tests.txt",
+      "bytes": 14184,
+      "sha256": "3d887bc1616a077ae81d3606d85d6fe70992b9833f5767988f3b1e6a51de924e"
+    },
+    {
+      "path": "results/security/defended-app-trace.json",
+      "bytes": 1291,
+      "sha256": "072dbfc229c99dc390aba48b7038aef038fe3a9750ba7b407aaad33bed501efa"
+    },
+    {
+      "path": "results/security/redteam.csv",
+      "bytes": 181,
+      "sha256": "f4eeb5628e670323809e6d73f1efbf8c15a206860dac0ff9e8af1dd2a61bac5d"
+    },
+    {
+      "path": "results/security/summary.json",
+      "bytes": 1416,
+      "sha256": "e56ac2037fa2979cb67b160d05012ffa15ce75934b23ee7e143ea0b0f0ac14c9"
+    },
+    {
+      "path": "results/security/unsafe-lab-trace.json",
+      "bytes": 2401,
+      "sha256": "27bfca2fb5ba24d297f9fbea9b5f45c2802e843665fb7e926ca299b7c812b402"
+    },
+    {
+      "path": "scripts/build_presentation.py",
+      "bytes": 14236,
+      "sha256": "4935b3f2ddcbf65debc04c1d0f455bf0080fb489173050c9242c3c0caf203ba5"
+    },
+    {
+      "path": "scripts/configure_local.py",
+      "bytes": 1786,
+      "sha256": "95e5d092ed236eef0f6932269712a02063de0d120a2beb2bbf18c589551cfc32"
+    },
+    {
+      "path": "scripts/live_api_smoke.py",
+      "bytes": 4144,
+      "sha256": "2992936cb61768b99c21ac4f319bd4016bfe33fa3be24beb0d1baf9dbf34be53"
+    },
+    {
+      "path": "scripts/package_submission.py",
+      "bytes": 6809,
+      "sha256": "452dcb573e2ff62fdc745b37b411aedcf67ace226a9678304291efffaeb0d2cb"
+    },
+    {
+      "path": "scripts/render_readme.py",
+      "bytes": 12516,
+      "sha256": "de130e4eb6031f557bc8e272907b5307cf5f12cfc25a10c970a9a122252ade0e"
+    },
+    {
+      "path": "scripts/resume_evaluation.py",
+      "bytes": 3006,
+      "sha256": "25041015792062ebf5150074ef3e58ede0c7dc58b68e408f6e08259cea2db3f0"
+    }
+  ],
+  "excluded": [
+    "real .env files",
+    "provider/service secrets",
+    "raw response cache",
+    "runtime databases",
+    "original Git history",
+    "unrelated course notebooks/slides"
+  ]
+}

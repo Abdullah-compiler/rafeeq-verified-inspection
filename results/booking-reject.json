@@ -1,0 +1,140 @@
+{
+  "schema": "rafeeq.booking-run.v1",
+  "data": "synthetic",
+  "simulation_date": "2026-11-01",
+  "stopped": "done",
+  "steps": 6,
+  "reported_cost_usd": 0.0,
+  "models": [
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free"
+  ],
+  "final": "لم يتم حجز أي فحص لأن طلب الموافقة البشرية رُفض. لم يُحجز الموعد بواسطة هذا الطلب.",
+  "model_final": "✅ Identity verified (POL‑08).  \n✅ Policy POL‑05 allows inspections Sun‑Thu 08:00‑14:00, one‑hour slots, bookable ≥ 2 working days ahead.  \n\n**Slot check:** The only free slot for Al‑Rawdah on 4 Nov 2026 was 09:00.  \n\n**Booking result:** The human‑approval step for book_inspection was **denied** – the inspection was not scheduled.  \n\nIf you’d like to try another date/time, just let me know and I can list other available slots.",
+  "response_grounded_in_outcome": true,
+  "usage": {
+    "calls": 6,
+    "input_tokens": 15128,
+    "output_tokens": 1229
+  },
+  "tool_calls": [
+    {
+      "name": "get_permit",
+      "arguments": {
+        "permit_id": "FTR-30311",
+        "national_id_last4": "[redacted]",
+        "mobile": "[redacted]"
+      }
+    },
+    {
+      "name": "search_policies",
+      "arguments": {
+        "query": "POL-05",
+        "k": 1
+      }
+    },
+    {
+      "name": "search_policies",
+      "arguments": {
+        "query": "inspection booking POL-05",
+        "k": 1
+      }
+    },
+    {
+      "name": "list_slots",
+      "arguments": {
+        "district": "Al-Rawdah",
+        "date_from": "2026-11-04",
+        "date_to": "2026-11-04"
+      }
+    },
+    {
+      "name": "book_inspection",
+      "arguments": {
+        "slot": "2026-11-04 09:00",
+        "permit_id": "FTR-30311"
+      }
+    }
+  ],
+  "events": [
+    {
+      "event": "identity_verified",
+      "permit_id": "FTR-30311"
+    },
+    {
+      "event": "policy_retrieved",
+      "policy_ids": [
+        "POL-10"
+      ]
+    },
+    {
+      "event": "policy_retrieved",
+      "policy_ids": [
+        "POL-05"
+      ]
+    },
+    {
+      "event": "slots_listed",
+      "district": "Al-Rawdah",
+      "count": 1
+    },
+    {
+      "event": "approval_decision",
+      "approved": false,
+      "permit_id": "FTR-30311",
+      "slot": "2026-11-04 09:00",
+      "district": "Al-Rawdah",
+      "kind": "health"
+    }
+  ],
+  "trace": [
+    {
+      "kind": "call",
+      "text": "get_permit({\"permit_id\": \"FTR-30311\", \"national_id_last4\": \"[redacted]\", \"mobile\": \"[redacted-mobile]\"})"
+    },
+    {
+      "kind": "result",
+      "text": "{\"permit_id\": \"FTR-30311\", \"type\": \"FTR\", \"status\": \"approved\", \"district\": \"Al-Rawdah\", \"inspections\": []}"
+    },
+    {
+      "kind": "call",
+      "text": "search_policies({\"query\": \"POL-05\", \"k\": 1})"
+    },
+    {
+      "kind": "result",
+      "text": "[{\"policy_id\": \"POL-10\", \"title\": \"Contact channels and assistant scope\", \"text\": \"# What the digital assistant may do\\n\\n| Action | Allowed | Condition |\\n|---|---|---|\\n| Explain policies and fees | yes | cite the policy ID |\\n| Look up an application | yes | after identity verification (POL-08) |\\n| Book, reschedule or cancel an inspection | yes | after verification; confirm the slot with the applicant |\\n| Request a refund | yes | after verification; above 1,000 SAR needs a finance officer (POL-06) |\\n| Escalate an SLA breach | yes | after verification (POL-03) |\\n| Approve, reject or change an application | **no** | officers only |\\n| Issue or waive fines | **no** | inspectors only |\\n| Email anyone other than the applicant | **no** | |\\n\\nWhen unsure, the assistant hands over to a human officer and says so.\"}]"
+    },
+    {
+      "kind": "call",
+      "text": "search_policies({\"query\": \"inspection booking POL-05\", \"k\": 1})"
+    },
+    {
+      "kind": "result",
+      "text": "[{\"policy_id\": \"POL-05\", \"title\": \"Inspections\", \"text\": \"# Inspections\\n\\nInspections are booked on the portal or through an authorized assistant.\\n\\n- Slots: **Sunday to Thursday, 08:00–14:00**, one hour each (08:00, 09:00, … 13:00).\\n- An inspection can be booked only for a permit in status `approved` (BLD foundation and completion inspections,\\n  FTR health inspections) or `under_review` (FTR and EVT pre-approval site visits).\\n- Book at least **2 working days** ahead.\\n- Reschedule or cancel free of charge up to **24 hours** before the slot.\\n- A missed inspection costs a **150 SAR rebooking fee** (POL-02).\\n- Each district has its own inspection team; an applicant books the team of the permit's district.\\n\\n## Results\\n\\n`passed`, `failed` (with findings; the applicant fixes them and books a re-inspection free of charge within 30 days),\\nor `no_show`.\"}]"
+    },
+    {
+      "kind": "call",
+      "text": "list_slots({\"district\": \"Al-Rawdah\", \"date_from\": \"2026-11-04\", \"date_to\": \"2026-11-04\"})"
+    },
+    {
+      "kind": "result",
+      "text": "[\"2026-11-04 09:00\"]"
+    },
+    {
+      "kind": "call",
+      "text": "book_inspection({\"slot\": \"2026-11-04 09:00\", \"permit_id\": \"FTR-30311\"})"
+    },
+    {
+      "kind": "error",
+      "text": "{\"error\": \"The human denied booking. No inspection was booked. Do not retry this turn.\"}"
+    },
+    {
+      "kind": "final",
+      "text": "✅ Identity verified (POL‑08).  \n✅ Policy POL‑05 allows inspections Sun‑Thu 08:00‑14:00, one‑hour slots, bookable ≥ 2 working days ahead.  \n\n**Slot check:** The only free slot for Al‑Rawdah on 4 Nov 2026 was 09:00.  \n\n**Booking result:** The human‑approval step for book_inspection was **denied** – the inspection was not scheduled.  \n\nIf you’d like to try another date/time, just let me know and I can list other available slots."
+    }
+  ]
+}

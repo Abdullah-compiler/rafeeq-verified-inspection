@@ -1,0 +1,45 @@
+[
+  {
+    "test": "approve",
+    "scripted_approval_input": "y",
+    "database_bookings": [
+      {
+        "inspection_id": "INS-9002",
+        "permit_id": "FTR-30311",
+        "kind": "health",
+        "slot": "2026-11-04 09:00",
+        "district": "Al-Rawdah",
+        "status": "booked"
+      }
+    ],
+    "slot_taken": true,
+    "steps": 5,
+    "models": [
+      "nvidia/nemotron-3.5-lightning:free"
+    ],
+    "reported_cost_usd": 0.0,
+    "usage": {
+      "calls": 5,
+      "input_tokens": 12057,
+      "output_tokens": 1505
+    },
+    "verified": true
+  },
+  {
+    "test": "reject",
+    "scripted_approval_input": "n",
+    "database_bookings": [],
+    "slot_taken": false,
+    "steps": 6,
+    "models": [
+      "nvidia/nemotron-3.5-lightning:free"
+    ],
+    "reported_cost_usd": 0.0,
+    "usage": {
+      "calls": 6,
+      "input_tokens": 15128,
+      "output_tokens": 1229
+    },
+    "verified": true
+  }
+]

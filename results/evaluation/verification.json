@@ -1,0 +1,128 @@
+{
+  "task_count": 16,
+  "languages": {
+    "en": 8,
+    "ar": 8
+  },
+  "csv_rows": 5,
+  "complete_pairs_with_identical_raw_finals_calls_events_and_deltas": 2,
+  "cache_directory_mode": "0o700",
+  "execution_source_hash_unchanged": {
+    "labs/capstone/rafeeq.py": true,
+    "labs/agentkit.py": true,
+    "labs/capstone/evaluate.py": false
+  },
+  "note": "Evaluator source changed only for offline grader normalization/summary after model execution; grader hashes saved in completed reports.",
+  "actual_database_readbacks": [
+    {
+      "task_id": "health-approve-en",
+      "config": "A",
+      "status": "completed",
+      "actual_inspections": [
+        {
+          "inspection_id": "INS-9001",
+          "permit_id": "BLD-20981",
+          "kind": "foundation",
+          "slot": "2026-11-03 10:00",
+          "district": "Al-Malqa",
+          "status": "booked",
+          "findings": null
+        },
+        {
+          "inspection_id": "INS-9002",
+          "permit_id": "FTR-30311",
+          "kind": "health",
+          "slot": "2026-11-04 09:00",
+          "district": "Al-Rawdah",
+          "status": "booked",
+          "findings": null
+        }
+      ],
+      "report_present": true,
+      "credential_scan_passed": true
+    },
+    {
+      "task_id": "foundation-deny-ar",
+      "config": "A",
+      "status": "completed",
+      "actual_inspections": [
+        {
+          "inspection_id": "INS-9001",
+          "permit_id": "BLD-20981",
+          "kind": "foundation",
+          "slot": "2026-11-03 10:00",
+          "district": "Al-Malqa",
+          "status": "booked",
+          "findings": null
+        }
+      ],
+      "report_present": true,
+      "credential_scan_passed": true
+    },
+    {
+      "task_id": "health-deny-en",
+      "config": "A",
+      "status": "quota_exhausted",
+      "actual_inspections": [
+        {
+          "inspection_id": "INS-9001",
+          "permit_id": "BLD-20981",
+          "kind": "foundation",
+          "slot": "2026-11-03 10:00",
+          "district": "Al-Malqa",
+          "status": "booked",
+          "findings": null
+        }
+      ],
+      "report_present": true,
+      "credential_scan_passed": true
+    },
+    {
+      "task_id": "health-approve-en",
+      "config": "B",
+      "status": "completed",
+      "actual_inspections": [
+        {
+          "inspection_id": "INS-9001",
+          "permit_id": "BLD-20981",
+          "kind": "foundation",
+          "slot": "2026-11-03 10:00",
+          "district": "Al-Malqa",
+          "status": "booked",
+          "findings": null
+        },
+        {
+          "inspection_id": "INS-9002",
+          "permit_id": "FTR-30311",
+          "kind": "health",
+          "slot": "2026-11-04 09:00",
+          "district": "Al-Rawdah",
+          "status": "booked",
+          "findings": null
+        }
+      ],
+      "report_present": true,
+      "credential_scan_passed": true
+    },
+    {
+      "task_id": "foundation-deny-ar",
+      "config": "B",
+      "status": "completed",
+      "actual_inspections": [
+        {
+          "inspection_id": "INS-9001",
+          "permit_id": "BLD-20981",
+          "kind": "foundation",
+          "slot": "2026-11-03 10:00",
+          "district": "Al-Malqa",
+          "status": "booked",
+          "findings": null
+        }
+      ],
+      "report_present": true,
+      "credential_scan_passed": true
+    }
+  ],
+  "summary_complete": false,
+  "status": "verified partial evidence; quota blocked"
+}

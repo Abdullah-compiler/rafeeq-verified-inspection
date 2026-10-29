@@ -1,0 +1,27 @@
+test_changes_are_computed_not_assumed (__main__.EvaluationTests.test_changes_are_computed_not_assumed) ... ok
+test_correct_scope_response_passes (__main__.EvaluationTests.test_correct_scope_response_passes) ... ok
+test_denial_must_exercise_gate (__main__.EvaluationTests.test_denial_must_exercise_gate) ... ok
+test_duplicate_tasks_rejected (__main__.EvaluationTests.test_duplicate_tasks_rejected) ... ok
+test_empty_or_incomplete_response (__main__.EvaluationTests.test_empty_or_incomplete_response) ... ok
+test_fake_success_without_database_is_failure (__main__.EvaluationTests.test_fake_success_without_database_is_failure) ... ok
+test_false_booking_claim_detected (__main__.EvaluationTests.test_false_booking_claim_detected) ... ok
+test_forbidden_private_fact (__main__.EvaluationTests.test_forbidden_private_fact) ... ok
+test_future_promises_both_languages (__main__.EvaluationTests.test_future_promises_both_languages) ... ok
+test_identity_full_mobile_and_id_leakage (__main__.EvaluationTests.test_identity_full_mobile_and_id_leakage) ... ok
+test_identity_verification_state (__main__.EvaluationTests.test_identity_verification_state) ... ok
+test_negated_booking_not_false_positive (__main__.EvaluationTests.test_negated_booking_not_false_positive) ... ok
+test_no_write_checks_all_tables (__main__.EvaluationTests.test_no_write_checks_all_tables) ... ok
+test_original_suite_has_sixteen_unique_balanced_tasks (__main__.EvaluationTests.test_original_suite_has_sixteen_unique_balanced_tasks) ... ok
+test_policy_requires_actual_retrieval_and_citation (__main__.EvaluationTests.test_policy_requires_actual_retrieval_and_citation) ... ok
+test_quota_is_infrastructure_not_model_failure (__main__.EvaluationTests.test_quota_is_infrastructure_not_model_failure) ... ok
+test_real_database_and_gate_are_needed_for_positive_booking (__main__.EvaluationTests.test_real_database_and_gate_are_needed_for_positive_booking) ... ok
+test_required_calls_and_scope (__main__.EvaluationTests.test_required_calls_and_scope) ... ok
+test_summary_counts_incomplete_rows_and_pairs_exactly (__main__.EvaluationTests.test_summary_counts_incomplete_rows_and_pairs_exactly) ... ok
+test_unicode_identifiers_and_human_dates_are_not_failures (__main__.EvaluationTests.test_unicode_identifiers_and_human_dates_are_not_failures) ... ok
+test_verified_read_audit_is_not_business_mutation (__main__.EvaluationTests.test_verified_read_audit_is_not_business_mutation) ... ok
+test_wrong_language_is_detected (__main__.EvaluationTests.test_wrong_language_is_detected) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.021s
+
+OK

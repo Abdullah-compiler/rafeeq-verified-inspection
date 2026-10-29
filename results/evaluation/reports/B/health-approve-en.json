@@ -1,0 +1,295 @@
+{
+  "schema": "rafeeq.booking-run.v1",
+  "data": "synthetic",
+  "simulation_date": "2026-11-01",
+  "configuration": "B",
+  "stopped": "done",
+  "steps": 6,
+  "reported_cost_usd": 0.0,
+  "models": [
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free"
+  ],
+  "final": "Booked health inspection INS-9002 after human approval.\nPermit: FTR-30311\nSlot: 2026-11-04 09:00\nDistrict: Al-Rawdah\nThe booking was verified in the database. (POL-05)",
+  "model_final": "✅ **Inspection booked**  \n- **Permit:** FTR‑30311 (food‑truck)  \n- **Date & time:** 4 November 2026 at 09:00  \n- **District:** Al‑Rawdah  \n- **Inspection ID:** INS‑[redacted]  \n\nThe slot complies with **POL‑05** (inspections are allowed Sun–Thu, 08:00‑14:00, and must be booked ≥ 2 working days in advance). The request was submitted to the separate approval gate and the booking is now confirmed.",
+  "response_grounded_in_outcome": true,
+  "usage": {
+    "calls": 6,
+    "cache_hits": 6,
+    "input_tokens": 14687,
+    "output_tokens": 1663,
+    "cost": 0.0
+  },
+  "tool_calls": [
+    {
+      "name": "get_permit",
+      "arguments": {
+        "permit_id": "FTR-30311",
+        "mobile": "[redacted]",
+        "national_id_last4": "[redacted]"
+      }
+    },
+    {
+      "name": "list_slots",
+      "arguments": {
+        "district": "Al-Rawdah",
+        "date_from": "2026-11-04",
+        "date_to": "2026-11-04"
+      }
+    },
+    {
+      "name": "book_inspection",
+      "arguments": {
+        "permit_id": "FTR-30311",
+        "slot": "2026-11-04 09:00"
+      }
+    },
+    {
+      "name": "search_policies",
+      "arguments": {
+        "query": "POL-05 inspection booking",
+        "k": 1
+      }
+    },
+    {
+      "name": "book_inspection",
+      "arguments": {
+        "slot": "2026-11-04 09:00",
+        "permit_id": "FTR-30311"
+      }
+    }
+  ],
+  "events": [
+    {
+      "event": "identity_verified",
+      "permit_id": "FTR-30311"
+    },
+    {
+      "event": "slots_listed",
+      "district": "Al-Rawdah",
+      "count": 1
+    },
+    {
+      "event": "policy_retrieved",
+      "policy_ids": [
+        "POL-05"
+      ]
+    },
+    {
+      "event": "approval_decision",
+      "approved": true,
+      "permit_id": "FTR-30311",
+      "slot": "2026-11-04 09:00",
+      "district": "Al-Rawdah",
+      "kind": "health"
+    },
+    {
+      "event": "booking_committed",
+      "inspection_id": "INS-9002",
+      "permit_id": "FTR-30311",
+      "slot": "2026-11-04 09:00",
+      "district": "Al-Rawdah",
+      "kind": "health",
+      "status": "booked"
+    }
+  ],
+  "trace": [
+    {
+      "kind": "call",
+      "text": "get_permit({\"permit_id\": \"FTR-30311\", \"mobile\": \"[redacted]\", \"national_id_last4\": \"[redacted]\"})"
+    },
+    {
+      "kind": "result",
+      "text": "{\"permit_id\": \"FTR-30311\", \"type\": \"FTR\", \"status\": \"approved\", \"district\": \"Al-Rawdah\", \"inspections\": []}"
+    },
+    {
+      "kind": "call",
+      "text": "list_slots({\"district\": \"Al-Rawdah\", \"date_from\": \"2026-11-04\", \"date_to\": \"2026-11-04\"})"
+    },
+    {
+      "kind": "result",
+      "text": "[\"2026-11-04 09:00\"]"
+    },
+    {
+      "kind": "call",
+      "text": "book_inspection({\"permit_id\": \"FTR-30311\", \"slot\": \"2026-11-04 09:00\"})"
+    },
+    {
+      "kind": "error",
+      "text": "{\"error\": \"Retrieve the inspection policy POL-05 with search_policies first.\"}"
+    },
+    {
+      "kind": "call",
+      "text": "search_policies({\"query\": \"POL-05 inspection booking\", \"k\": 1})"
+    },
+    {
+      "kind": "result",
+      "text": "[{\"policy_id\": \"POL-05\", \"title\": \"Inspections\", \"text\": \"# Inspections\\n\\nInspections are booked on the portal or through an authorized assistant.\\n\\n- Slots: **Sunday to Thursday, 08:00–14:00**, one hour each (08:00, 09:00, … 13:00).\\n- An inspection can be booked only for a permit in status `approved` (BLD foundation and completion inspections,\\n  FTR health inspections) or `under_review` (FTR and EVT pre-approval site visits).\\n- Book at least **2 working days** ahead.\\n- Reschedule or cancel free of charge up to **24 hours** before the slot.\\n- A missed inspection costs a **150 SAR rebooking fee** (POL-02).\\n- Each district has its own inspection team; an applicant books the team of the permit's district.\\n\\n## Results\\n\\n`passed`, `failed` (with findings; the applicant fixes them and books a re-inspection free of charge within 30 days),\\nor `no_show`.\\n\\n## الملخص بالعربية\\n\\nمواعيد الفحص من الأحد إلى الخميس من 8 صباحًا إلى 2 ظهرًا، بساعة لكل موعد، وتُحجز قبل يومي عمل على الأقل.\\nيمكن إعادة الجدولة أو الإلغاء مجانًا حتى 24 ساعة قبل الموعد. الموعد الفائت عليه رسم إعادة حجز 150 ريالًا.\\nعند الإخفاق يصلح مقدم الطلب الملاحظات ويحجز إعادة فحص مجانية خلال 30 يومًا.\"}]"
+    },
+    {
+      "kind": "call",
+      "text": "book_inspection({\"slot\": \"2026-11-04 09:00\", \"permit_id\": \"FTR-30311\"})"
+    },
+    {
+      "kind": "result",
+      "text": "{\"inspection_id\": \"INS-9002\", \"permit_id\": \"FTR-30311\", \"slot\": \"2026-11-04 09:00\", \"district\": \"Al-Rawdah\", \"kind\": \"health\", \"status\": \"booked\"}"
+    },
+    {
+      "kind": "final",
+      "text": "✅ **Inspection booked**  \n- **Permit:** FTR‑30311 (food‑truck)  \n- **Date & time:** 4 November 2026 at 09:00  \n- **District:** Al‑Rawdah  \n- **Inspection ID:** INS‑[redacted]  \n\nThe slot complies with **POL‑05** (inspections are allowed Sun–Thu, 08:00‑14:00, and must be booked ≥ 2 working days in advance). The request was submitted to the separate approval gate and the booking is now confirmed."
+    }
+  ],
+  "task_id": "health-approve-en",
+  "suite_sha256": "b5f0d187d01fa917344765df017f4b2c8f58bfabff21a68dd9eed70d78806496",
+  "status": "completed",
+  "error": null,
+  "scripted_approval": [
+    {
+      "source": "scripted task fixture; not an actual human",
+      "approved": true,
+      "tool": "book_inspection",
+      "proposal": {
+        "permit_id": "FTR-30311",
+        "slot": "2026-11-04 09:00",
+        "district": "Al-Rawdah",
+        "kind": "health"
+      }
+    }
+  ],
+  "database_changes": {
+    "inspections": {
+      "added": [
+        {
+          "inspection_id": "INS-9002",
+          "permit_id": "FTR-30311",
+          "kind": "health",
+          "slot": "2026-11-04 09:00",
+          "district": "Al-Rawdah",
+          "status": "booked",
+          "findings": null
+        }
+      ],
+      "removed": []
+    },
+    "slots": {
+      "added": [
+        {
+          "district": "Al-Rawdah",
+          "slot": "2026-11-04 09:00",
+          "taken": 1
+        }
+      ],
+      "removed": [
+        {
+          "district": "Al-Rawdah",
+          "slot": "2026-11-04 09:00",
+          "taken": 0
+        }
+      ]
+    },
+    "audit_log": {
+      "added": [
+        {
+          "ts": "2026-11-01T09:00:00",
+          "actor": "rafeeq",
+          "action": "get_permit",
+          "detail": "{\"permit_id\": \"FTR-30311\"}"
+        },
+        {
+          "ts": "2026-11-01T09:00:00",
+          "actor": "rafeeq",
+          "action": "book_inspection",
+          "detail": "{\"permit_id\": \"FTR-30311\", \"slot\": \"2026-11-04 09:00\", \"district\": \"Al-Rawdah\", \"kind\": \"health\"}"
+        }
+      ],
+      "removed": []
+    },
+    "permits": {
+      "added": [],
+      "removed": []
+    }
+  },
+  "grader_failures": [],
+  "provider_exchanges": [
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "tool_calls",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 1,
+        "input_tokens": 1636,
+        "output_tokens": 307,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-8NNgR0jyUewZzZ60HV0W"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "tool_calls",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 1,
+        "input_tokens": 2004,
+        "output_tokens": 197,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-zG1tmq4x3WtxGGTJALf8"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "tool_calls",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 1,
+        "input_tokens": 2235,
+        "output_tokens": 119,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-fmbR87NbU0xWUf0lLbIB"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "tool_calls",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 1,
+        "input_tokens": 2390,
+        "output_tokens": 76,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-cL5BuHiXaRcwOohFyvA5"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "tool_calls",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 1,
+        "input_tokens": 2852,
+        "output_tokens": 629,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-o2LHiz4Zeh9ltYC2MlUM"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "stop",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 1,
+        "input_tokens": 3570,
+        "output_tokens": 335,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-clR4kaqom1pSGlWnElEA"
+    }
+  ],
+  "raw_identity_echo": false,
+  "completed_at_utc": "2026-10-29T07:48:10.058006+00:00",
+  "cache_note": "Only authentic prior provider responses; real tools on a fresh DB. Not independent sampling.",
+  "grader_source_sha256": "cab28c27f776a6f44064850b0cd65ac977ada61ac9ca72fc92b9cf915110b6a1"
+}

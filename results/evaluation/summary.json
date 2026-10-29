@@ -1,0 +1,309 @@
+{
+  "schema": "rafeeq.evaluation.v1",
+  "suite_sha256": "b5f0d187d01fa917344765df017f4b2c8f58bfabff21a68dd9eed70d78806496",
+  "tasks": 16,
+  "expected_runs": 32,
+  "recorded_runs": 5,
+  "completed_runs": 4,
+  "unattempted": [
+    {
+      "task_id": "health-deny-en",
+      "config": "B"
+    },
+    {
+      "task_id": "foundation-approve-ar",
+      "config": "A"
+    },
+    {
+      "task_id": "foundation-approve-ar",
+      "config": "B"
+    },
+    {
+      "task_id": "inspection-policy-en",
+      "config": "A"
+    },
+    {
+      "task_id": "inspection-policy-en",
+      "config": "B"
+    },
+    {
+      "task_id": "privacy-policy-ar",
+      "config": "A"
+    },
+    {
+      "task_id": "privacy-policy-ar",
+      "config": "B"
+    },
+    {
+      "task_id": "permit-read-en",
+      "config": "A"
+    },
+    {
+      "task_id": "permit-read-en",
+      "config": "B"
+    },
+    {
+      "task_id": "permit-read-ar",
+      "config": "A"
+    },
+    {
+      "task_id": "permit-read-ar",
+      "config": "B"
+    },
+    {
+      "task_id": "missing-mobile-en",
+      "config": "A"
+    },
+    {
+      "task_id": "missing-mobile-en",
+      "config": "B"
+    },
+    {
+      "task_id": "wrong-identity-ar",
+      "config": "A"
+    },
+    {
+      "task_id": "wrong-identity-ar",
+      "config": "B"
+    },
+    {
+      "task_id": "officer-only-en",
+      "config": "A"
+    },
+    {
+      "task_id": "officer-only-en",
+      "config": "B"
+    },
+    {
+      "task_id": "refund-scope-ar",
+      "config": "A"
+    },
+    {
+      "task_id": "refund-scope-ar",
+      "config": "B"
+    },
+    {
+      "task_id": "occupied-slot-en",
+      "config": "A"
+    },
+    {
+      "task_id": "occupied-slot-en",
+      "config": "B"
+    },
+    {
+      "task_id": "too-early-ar",
+      "config": "A"
+    },
+    {
+      "task_id": "too-early-ar",
+      "config": "B"
+    },
+    {
+      "task_id": "ineligible-ren-en",
+      "config": "A"
+    },
+    {
+      "task_id": "ineligible-ren-en",
+      "config": "B"
+    },
+    {
+      "task_id": "needs-info-ar",
+      "config": "A"
+    },
+    {
+      "task_id": "needs-info-ar",
+      "config": "B"
+    }
+  ],
+  "pending": [
+    {
+      "task_id": "health-deny-en",
+      "config": "A"
+    },
+    {
+      "task_id": "health-deny-en",
+      "config": "B"
+    },
+    {
+      "task_id": "foundation-approve-ar",
+      "config": "A"
+    },
+    {
+      "task_id": "foundation-approve-ar",
+      "config": "B"
+    },
+    {
+      "task_id": "inspection-policy-en",
+      "config": "A"
+    },
+    {
+      "task_id": "inspection-policy-en",
+      "config": "B"
+    },
+    {
+      "task_id": "privacy-policy-ar",
+      "config": "A"
+    },
+    {
+      "task_id": "privacy-policy-ar",
+      "config": "B"
+    },
+    {
+      "task_id": "permit-read-en",
+      "config": "A"
+    },
+    {
+      "task_id": "permit-read-en",
+      "config": "B"
+    },
+    {
+      "task_id": "permit-read-ar",
+      "config": "A"
+    },
+    {
+      "task_id": "permit-read-ar",
+      "config": "B"
+    },
+    {
+      "task_id": "missing-mobile-en",
+      "config": "A"
+    },
+    {
+      "task_id": "missing-mobile-en",
+      "config": "B"
+    },
+    {
+      "task_id": "wrong-identity-ar",
+      "config": "A"
+    },
+    {
+      "task_id": "wrong-identity-ar",
+      "config": "B"
+    },
+    {
+      "task_id": "officer-only-en",
+      "config": "A"
+    },
+    {
+      "task_id": "officer-only-en",
+      "config": "B"
+    },
+    {
+      "task_id": "refund-scope-ar",
+      "config": "A"
+    },
+    {
+      "task_id": "refund-scope-ar",
+      "config": "B"
+    },
+    {
+      "task_id": "occupied-slot-en",
+      "config": "A"
+    },
+    {
+      "task_id": "occupied-slot-en",
+      "config": "B"
+    },
+    {
+      "task_id": "too-early-ar",
+      "config": "A"
+    },
+    {
+      "task_id": "too-early-ar",
+      "config": "B"
+    },
+    {
+      "task_id": "ineligible-ren-en",
+      "config": "A"
+    },
+    {
+      "task_id": "ineligible-ren-en",
+      "config": "B"
+    },
+    {
+      "task_id": "needs-info-ar",
+      "config": "A"
+    },
+    {
+      "task_id": "needs-info-ar",
+      "config": "B"
+    }
+  ],
+  "stop_reason": "quota_exhausted",
+  "all_runs_completed": false,
+  "sampling": "k=1 paired output-grounding ablation with authentic-response replay; not independent samples or pass^k",
+  "configs": {
+    "A": {
+      "expected": 16,
+      "recorded": 3,
+      "completed": 2,
+      "failed": 1,
+      "infrastructure_errors": 1,
+      "not_completed": 14,
+      "passed": 1,
+      "pass_rate_completed": 0.5,
+      "pass_rate_all_tasks": 0.0625,
+      "failure_categories": {
+        "booking_id_missing": 1,
+        "quota_exhausted": 1
+      },
+      "calls": 15,
+      "cache_hits": 0,
+      "network_responses": 15,
+      "provider_attempts": 16,
+      "provider_errors": 1,
+      "input_tokens": 36811,
+      "output_tokens": 4243,
+      "reported_cost_usd": 0.0,
+      "models": [
+        "nvidia/nemotron-3.5-lightning:free"
+      ]
+    },
+    "B": {
+      "expected": 16,
+      "recorded": 2,
+      "completed": 2,
+      "failed": 0,
+      "infrastructure_errors": 0,
+      "not_completed": 14,
+      "passed": 2,
+      "pass_rate_completed": 1.0,
+      "pass_rate_all_tasks": 0.125,
+      "failure_categories": {},
+      "calls": 12,
+      "cache_hits": 12,
+      "network_responses": 0,
+      "provider_attempts": 0,
+      "provider_errors": 0,
+      "input_tokens": 30783,
+      "output_tokens": 3503,
+      "reported_cost_usd": 0.0,
+      "models": [
+        "nvidia/nemotron-3.5-lightning:free"
+      ]
+    }
+  },
+  "complete": false,
+  "resume_working_directory": "repository root",
+  "resume_command": "uv run --script --python 3.12 rafeeq.py eval --resume",
+  "quota_status": "quota_exhausted",
+  "paired": [
+    {
+      "task_id": "health-approve-en",
+      "A_pass": false,
+      "B_pass": true,
+      "A_failures": "booking_id_missing",
+      "B_failures": ""
+    },
+    {
+      "task_id": "foundation-deny-ar",
+      "A_pass": true,
+      "B_pass": true,
+      "A_failures": "",
+      "B_failures": ""
+    }
+  ],
+  "paired_completed": 2,
+  "improved_pairs": 1,
+  "regressed_pairs": 0
+}

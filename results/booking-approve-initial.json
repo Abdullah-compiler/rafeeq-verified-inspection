@@ -1,0 +1,120 @@
+{
+  "schema": "rafeeq.booking-run.v1",
+  "data": "synthetic",
+  "simulation_date": "2026-11-01",
+  "stopped": "done",
+  "steps": 5,
+  "reported_cost_usd": 0.0,
+  "models": [
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free"
+  ],
+  "final": "**تم حجز الفحص الصحي**  \n✅ الفحص للصَّرح FTR‑30311 في ٤ نوفمبر ٢٠٢٦ الساعة ٠٩:٠٠ بمنطقة الروض‑ة.\n\n- **المرجعية السيَّاسية:** وفق POL‑05، تُحَجَّبُ الفحوصات فيSlots من الأحد إلى الخميس من ٠٨:٠٠ إلى ١٤:٠٠، ويُشترط الحجز قبل يومين عمليين على الأقل. الموعد الحالي يفي بهذا الشرط.\n- **هويُّة المستفيد:** تمَّ التحقق من الهوية باستخدام آخر ٤ أرقام [redacted] والهاتف [redacted-mobile] (POL‑08).\n- **رقم الفحص:** INS‑9002\n\nسيتم إرسال تذكير بال موعد للفحص، ويمكنك إلغاء أو إعادة جدولة الفحص مجاناً حتى 24 ساعة قبل الموعد (كما ينص POL‑05).",
+  "tool_calls": [
+    {
+      "name": "search_policies",
+      "arguments": {
+        "query": "POL-05 inspection booking",
+        "k": 1
+      }
+    },
+    {
+      "name": "get_permit",
+      "arguments": {
+        "national_id_last4": "[redacted]",
+        "permit_id": "FTR-30311",
+        "mobile": "[redacted]"
+      }
+    },
+    {
+      "name": "list_slots",
+      "arguments": {
+        "date_to": "2026-12-04",
+        "district": "Al-Rawdah",
+        "date_from": "2026-11-04"
+      }
+    },
+    {
+      "name": "book_inspection",
+      "arguments": {
+        "slot": "2026-11-04 09:00",
+        "permit_id": "FTR-30311"
+      }
+    }
+  ],
+  "events": [
+    {
+      "event": "policy_retrieved",
+      "policy_ids": [
+        "POL-05"
+      ]
+    },
+    {
+      "event": "identity_verified",
+      "permit_id": "FTR-30311"
+    },
+    {
+      "event": "slots_listed",
+      "district": "Al-Rawdah",
+      "count": 24
+    },
+    {
+      "event": "approval_decision",
+      "approved": true,
+      "permit_id": "FTR-30311",
+      "slot": "2026-11-04 09:00",
+      "district": "Al-Rawdah",
+      "kind": "health"
+    },
+    {
+      "event": "booking_committed",
+      "inspection_id": "INS-9002",
+      "permit_id": "FTR-30311",
+      "slot": "2026-11-04 09:00",
+      "district": "Al-Rawdah",
+      "kind": "health",
+      "status": "booked"
+    }
+  ],
+  "trace": [
+    {
+      "kind": "call",
+      "text": "search_policies({\"query\": \"POL-05 inspection booking\", \"k\": 1})"
+    },
+    {
+      "kind": "result",
+      "text": "[{\"policy_id\": \"POL-05\", \"title\": \"Inspections\", \"text\": \"# Inspections\\n\\nInspections are booked on the portal or through an authorized assistant.\\n\\n- Slots: **Sunday to Thursday, 08:00–14:00**, one hour each (08:00, 09:00, … 13:00).\\n- An inspection can be booked only for a permit in status `approved` (BLD foundation and completion inspections,\\n  FTR health inspections) or `under_review` (FTR and EVT pre-approval site visits).\\n- Book at least **2 working days** ahead.\\n- Reschedule or cancel free of charge up to **24 hours** before the slot.\\n- A missed inspection costs a **150 SAR rebooking fee** (POL-02).\\n- Each district has its own inspection team; an applicant books the team of the permit's district.\\n\\n## Results\\n\\n`passed`, `failed` (with findings; the applicant fixes them and books a re-inspection free of charge within 30 days),\\nor `no_show`.\"}]"
+    },
+    {
+      "kind": "call",
+      "text": "get_permit({\"national_id_last4\": \"[redacted]\", \"permit_id\": \"FTR-30311\", \"mobile\": \"[redacted-mobile]\"})"
+    },
+    {
+      "kind": "result",
+      "text": "{\"permit_id\": \"FTR-30311\", \"type\": \"FTR\", \"status\": \"approved\", \"district\": \"Al-Rawdah\", \"inspections\": []}"
+    },
+    {
+      "kind": "call",
+      "text": "list_slots({\"date_to\": \"2026-12-04\", \"district\": \"Al-Rawdah\", \"date_from\": \"2026-11-04\"})"
+    },
+    {
+      "kind": "result",
+      "text": "[\"2026-11-04 09:00\", \"2026-11-05 08:00\", \"2026-11-05 10:00\", \"2026-11-05 12:00\", \"2026-11-05 13:00\", \"2026-11-08 11:00\", \"2026-11-08 12:00\", \"2026-11-09 08:00\", \"2026-11-09 10:00\", \"2026-11-09 11:00\", \"2026-11-09 12:00\", \"2026-11-09 13:00\", \"2026-11-10 12:00\", \"2026-11-10 13:00\", \"2026-11-11 08:00\", \"2026-11-11 10:00\", \"2026-11-11 13:00\", \"2026-11-12 08:00\", \"2026-11-12 09:00\", \"2026-11-12 12:00\", \"2026-11-15 09:00\", \"2026-11-15 10:00\", \"2026-11-15 12:00\", \"2026-11-16 09:00\"]"
+    },
+    {
+      "kind": "call",
+      "text": "book_inspection({\"slot\": \"2026-11-04 09:00\", \"permit_id\": \"FTR-30311\"})"
+    },
+    {
+      "kind": "result",
+      "text": "{\"inspection_id\": \"INS-9002\", \"permit_id\": \"FTR-30311\", \"slot\": \"2026-11-04 09:00\", \"district\": \"Al-Rawdah\", \"kind\": \"health\", \"status\": \"booked\"}"
+    },
+    {
+      "kind": "final",
+      "text": "**تم حجز الفحص الصحي**  \n✅ الفحص للصَّرح FTR‑30311 في ٤ نوفمبر ٢٠٢٦ الساعة ٠٩:٠٠ بمنطقة الروض‑ة.\n\n- **المرجعية السيَّاسية:** وفق POL‑05، تُحَجَّبُ الفحوصات فيSlots من الأحد إلى الخميس من ٠٨:٠٠ إلى ١٤:٠٠، ويُشترط الحجز قبل يومين عمليين على الأقل. الموعد الحالي يفي بهذا الشرط.\n- **هويُّة المستفيد:** تمَّ التحقق من الهوية باستخدام آخر ٤ أرقام [redacted] والهاتف [redacted-mobile] (POL‑08).\n- **رقم الفحص:** INS‑9002\n\nسيتم إرسال تذكير بال موعد للفحص، ويمكنك إلغاء أو إعادة جدولة الفحص مجاناً حتى 24 ساعة قبل الموعد (كما ينص POL‑05)."
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+task_id,config,status,passed,failures,language,category,steps,calls,cache_hits,network_responses,provider_attempts,provider_errors,input_tokens,output_tokens,reported_cost_usd,models,new_bookings,approval_calls,rendered,raw_identity_echo,elapsed_seconds,report
+health-approve-en,B,completed,True,,en,booking_approve,6,6,6,0,0,0,14687,1663,0.0,nvidia/nemotron-3.5-lightning:free,1,1,True,False,0.411,reports/B/health-approve-en.json
+foundation-deny-ar,B,completed,True,,ar,booking_deny,6,6,6,0,0,0,16096,1840,0.0,nvidia/nemotron-3.5-lightning:free,0,1,True,False,0.366,reports/B/foundation-deny-ar.json

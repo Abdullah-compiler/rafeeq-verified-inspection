@@ -1,0 +1,118 @@
+test_approve_writes_and_reads_back_one_booking_and_bound_audit (test_api.APITests.test_approve_writes_and_reads_back_one_booking_and_bound_audit) ... ok
+test_authorization_revocation_after_queue_is_rechecked (test_api.APITests.test_authorization_revocation_after_queue_is_rechecked) ... ok
+test_body_question_and_extra_field_limits (test_api.APITests.test_body_question_and_extra_field_limits) ... ok
+test_budget_shape_reserves_before_provider_call (test_api.APITests.test_budget_shape_reserves_before_provider_call) ... ok
+test_changed_and_cross_session_proposals_rejected (test_api.APITests.test_changed_and_cross_session_proposals_rejected) ... ok
+test_changed_business_details_fail_exact_proposal_gate (test_api.APITests.test_changed_business_details_fail_exact_proposal_gate) ... ok
+test_cumulative_service_budget_cannot_be_bypassed_with_new_session (test_api.APITests.test_cumulative_service_budget_cannot_be_bypassed_with_new_session) ... ok
+test_expiry_during_policy_verification_cannot_pass_final_gate (test_api.APITests.test_expiry_during_policy_verification_cannot_pass_final_gate) ... ok
+test_expiry_uses_wall_clock_not_simulation_clock (test_api.APITests.test_expiry_uses_wall_clock_not_simulation_clock) ... ok
+test_fresh_identity_required_wrong_identity_does_not_consume (test_api.APITests.test_fresh_identity_required_wrong_identity_does_not_consume) ... ok
+test_health_docs_and_openapi_are_public_without_secrets (test_api.APITests.test_health_docs_and_openapi_are_public_without_secrets) ... ok
+test_missing_wrong_and_cross_role_tokens_denied (test_api.APITests.test_missing_wrong_and_cross_role_tokens_denied) ... ok
+test_model_calls_are_serialized_across_app_instances (test_api.APITests.test_model_calls_are_serialized_across_app_instances) ... ok
+test_pending_is_durable_and_never_books_during_chat (test_api.APITests.test_pending_is_durable_and_never_books_during_chat) ... ok
+test_policy_outage_keeps_approval_pending_without_write (test_api.APITests.test_policy_outage_keeps_approval_pending_without_write) ... ok
+test_post_commit_interruption_recovers_from_core_audit_after_restart (test_api.APITests.test_post_commit_interruption_recovers_from_core_audit_after_restart) ... ok
+test_proposal_and_terminal_result_database_triggers (test_api.APITests.test_proposal_and_terminal_result_database_triggers) ... ok
+test_provider_and_equal_service_tokens_rejected (test_api.APITests.test_provider_and_equal_service_tokens_rejected) ... ok
+test_real_cli_process_restart_and_real_mcp_approval_no_model_call (test_api.APITests.test_real_cli_process_restart_and_real_mcp_approval_no_model_call)
+Fixture-generated pending action survives real API process restarts; real policy MCP on approval. ... 
+CLI_RESTART_SMOKE process_starts=2 real_policy_mcp=true fixture_pending=true provider_calls=0 booking=["booked"] processes_stopped=true
+ok
+test_real_loopback_http_smoke_offline_model_only_server_stops (test_api.APITests.test_real_loopback_http_smoke_offline_model_only_server_stops)
+Actual TCP -> Uvicorn -> FastAPI -> guarded core -> SQLite, no TestClient transport. ... 
+LOOPBACK_SMOKE fixture_model=true provider_calls=0 statuses=[200, 200, 401, 201, 200, 200, 200] server_stopped=true
+ok
+test_reject_is_terminal_idempotent_and_leaves_slot_free (test_api.APITests.test_reject_is_terminal_idempotent_and_leaves_slot_free) ... ok
+test_request_budget_stops_before_further_work_and_persists (test_api.APITests.test_request_budget_stops_before_further_work_and_persists) ... ok
+test_request_count_and_session_count_limits (test_api.APITests.test_request_count_and_session_count_limits) ... ok
+test_response_redaction_and_metadata_only_private_logs (test_api.APITests.test_response_redaction_and_metadata_only_private_logs) ... ok
+test_same_decision_replays_without_write_opposite_decision_conflicts (test_api.APITests.test_same_decision_replays_without_write_opposite_decision_conflicts) ... ok
+test_session_capability_blocks_cross_session_reads_chat_and_path_traversal (test_api.APITests.test_session_capability_blocks_cross_session_reads_chat_and_path_traversal) ... ok
+test_simultaneous_duplicate_decisions_are_one_write (test_api.APITests.test_simultaneous_duplicate_decisions_are_one_write) ... ok
+test_taken_slot_fails_without_duplicate_or_partial_write (test_api.APITests.test_taken_slot_fails_without_duplicate_or_partial_write) ... ok
+test_validation_errors_and_model_errors_do_not_echo_secrets (test_api.APITests.test_validation_errors_and_model_errors_do_not_echo_secrets) ... ok
+test_approval_creates_one_real_booking (test_booking.BookingTests.test_approval_creates_one_real_booking) ... ok
+test_approval_exception_fails_without_booking (test_booking.BookingTests.test_approval_exception_fails_without_booking) ... ok
+test_booking_must_have_been_offered (test_booking.BookingTests.test_booking_must_have_been_offered) ... ok
+test_booking_requires_inspection_policy (test_booking.BookingTests.test_booking_requires_inspection_policy) ... ok
+test_booking_requires_verified_identity (test_booking.BookingTests.test_booking_requires_verified_identity) ... ok
+test_competing_writers_cannot_double_book (test_booking.BookingTests.test_competing_writers_cannot_double_book) ... ok
+test_confirmation_is_grounded_and_matches_english_request (test_booking.BookingTests.test_confirmation_is_grounded_and_matches_english_request) ... ok
+test_confirmation_matches_arabic_request (test_booking.BookingTests.test_confirmation_matches_arabic_request) ... ok
+test_date_range_and_format_validation (test_booking.BookingTests.test_date_range_and_format_validation) ... ok
+test_denial_confirmation_does_not_invent_policy_requirement (test_booking.BookingTests.test_denial_confirmation_does_not_invent_policy_requirement) ... ok
+test_denial_latches_for_rest_of_model_turn (test_booking.BookingTests.test_denial_latches_for_rest_of_model_turn) ... ok
+test_denial_never_writes_a_booking (test_booking.BookingTests.test_denial_never_writes_a_booking) ... ok
+test_does_not_offer_too_early_slot (test_booking.BookingTests.test_does_not_offer_too_early_slot) ... ok
+test_fail_closed_for_non_boolean_approval (test_booking.BookingTests.test_fail_closed_for_non_boolean_approval) ... ok
+test_failed_reverification_revokes_access (test_booking.BookingTests.test_failed_reverification_revokes_access) ... ok
+test_history_trim_never_starts_at_tool_result (test_booking.BookingTests.test_history_trim_never_starts_at_tool_result) ... ok
+test_id_requires_exactly_four_digits (test_booking.BookingTests.test_id_requires_exactly_four_digits) ... ok
+test_lookup_returns_no_name_id_or_mobile (test_booking.BookingTests.test_lookup_returns_no_name_id_or_mobile) ... ok
+test_new_user_turn_can_reconsider_denial (test_booking.BookingTests.test_new_user_turn_can_reconsider_denial) ... ok
+test_no_success_confirmation_if_committed_row_disappears (test_booking.BookingTests.test_no_success_confirmation_if_committed_row_disappears) ... ok
+test_other_district_is_blocked (test_booking.BookingTests.test_other_district_is_blocked) ... ok
+test_permit_changed_during_approval_is_not_booked (test_booking.BookingTests.test_permit_changed_during_approval_is_not_booked) ... ok
+test_previous_turn_booking_does_not_override_new_policy_reply (test_booking.BookingTests.test_previous_turn_booking_does_not_override_new_policy_reply) ... ok
+test_read_after_write_uses_same_state (test_booking.BookingTests.test_read_after_write_uses_same_state) ... ok
+test_redaction_removes_credentials_and_api_tokens (test_booking.BookingTests.test_redaction_removes_credentials_and_api_tokens) ... ok
+test_rejected_permit_cannot_book (test_booking.BookingTests.test_rejected_permit_cannot_book) ... ok
+test_reopening_does_not_reset_database (test_booking.BookingTests.test_reopening_does_not_reset_database) ... ok
+test_same_booking_is_idempotent (test_booking.BookingTests.test_same_booking_is_idempotent) ... ok
+test_slot_taken_during_approval_rolls_back_booking (test_booking.BookingTests.test_slot_taken_during_approval_rolls_back_booking) ... ok
+test_slots_require_verified_district (test_booking.BookingTests.test_slots_require_verified_district) ... ok
+test_wrong_and_unknown_permit_have_same_public_error (test_booking.BookingTests.test_wrong_and_unknown_permit_have_same_public_error) ... ok
+test_changes_are_computed_not_assumed (test_evaluation.EvaluationTests.test_changes_are_computed_not_assumed) ... ok
+test_correct_scope_response_passes (test_evaluation.EvaluationTests.test_correct_scope_response_passes) ... ok
+test_denial_must_exercise_gate (test_evaluation.EvaluationTests.test_denial_must_exercise_gate) ... ok
+test_duplicate_tasks_rejected (test_evaluation.EvaluationTests.test_duplicate_tasks_rejected) ... ok
+test_empty_or_incomplete_response (test_evaluation.EvaluationTests.test_empty_or_incomplete_response) ... ok
+test_fake_success_without_database_is_failure (test_evaluation.EvaluationTests.test_fake_success_without_database_is_failure) ... ok
+test_false_booking_claim_detected (test_evaluation.EvaluationTests.test_false_booking_claim_detected) ... ok
+test_forbidden_private_fact (test_evaluation.EvaluationTests.test_forbidden_private_fact) ... ok
+test_future_promises_both_languages (test_evaluation.EvaluationTests.test_future_promises_both_languages) ... ok
+test_identity_full_mobile_and_id_leakage (test_evaluation.EvaluationTests.test_identity_full_mobile_and_id_leakage) ... ok
+test_identity_verification_state (test_evaluation.EvaluationTests.test_identity_verification_state) ... ok
+test_negated_booking_not_false_positive (test_evaluation.EvaluationTests.test_negated_booking_not_false_positive) ... ok
+test_no_write_checks_all_tables (test_evaluation.EvaluationTests.test_no_write_checks_all_tables) ... ok
+test_original_suite_has_sixteen_unique_balanced_tasks (test_evaluation.EvaluationTests.test_original_suite_has_sixteen_unique_balanced_tasks) ... ok
+test_policy_requires_actual_retrieval_and_citation (test_evaluation.EvaluationTests.test_policy_requires_actual_retrieval_and_citation) ... ok
+test_quota_is_infrastructure_not_model_failure (test_evaluation.EvaluationTests.test_quota_is_infrastructure_not_model_failure) ... ok
+test_real_database_and_gate_are_needed_for_positive_booking (test_evaluation.EvaluationTests.test_real_database_and_gate_are_needed_for_positive_booking) ... ok
+test_required_calls_and_scope (test_evaluation.EvaluationTests.test_required_calls_and_scope) ... ok
+test_summary_counts_incomplete_rows_and_pairs_exactly (test_evaluation.EvaluationTests.test_summary_counts_incomplete_rows_and_pairs_exactly) ... ok
+test_unicode_identifiers_and_human_dates_are_not_failures (test_evaluation.EvaluationTests.test_unicode_identifiers_and_human_dates_are_not_failures) ... ok
+test_verified_read_audit_is_not_business_mutation (test_evaluation.EvaluationTests.test_verified_read_audit_is_not_business_mutation) ... ok
+test_wrong_language_is_detected (test_evaluation.EvaluationTests.test_wrong_language_is_detected) ... ok
+test_eof_denies_human_approval (test_mcp.CompletionAndInputTests.test_eof_denies_human_approval) ... 
+HUMAN APPROVAL REQUIRED / مطلوب موافقة بشرية
+{
+  "permit_id": "FTR-30311"
+}
+ok
+test_incomplete_generation_cannot_execute_tools (test_mcp.CompletionAndInputTests.test_incomplete_generation_cannot_execute_tools) ... ok
+test_agent_has_exactly_four_tools_and_policy_is_marked (test_mcp.PolicyTransportTests.test_agent_has_exactly_four_tools_and_policy_is_marked) ... ok
+test_credential_cannot_be_sent_as_policy_query (test_mcp.PolicyTransportTests.test_credential_cannot_be_sent_as_policy_query) ... ok
+test_policy_id_only_queries_return_the_exact_document (test_mcp.PolicyTransportTests.test_policy_id_only_queries_return_the_exact_document) ... ok
+test_real_mcp_query_returns_inspection_policy (test_mcp.PolicyTransportTests.test_real_mcp_query_returns_inspection_policy) ... ok
+test_server_exposes_only_public_policy_search (test_mcp.PolicyTransportTests.test_server_exposes_only_public_policy_search) ... ok
+test_unknown_explicit_policy_id_does_not_return_unrelated_rules (test_mcp.PolicyTransportTests.test_unknown_explicit_policy_id_does_not_return_unrelated_rules) ... ok
+test_agent_authorization_revoked_during_approval (test_review_regressions.ReviewRegressions.test_agent_authorization_revoked_during_approval) ... ok
+test_arabic_credentials_redact_without_lookup (test_review_regressions.ReviewRegressions.test_arabic_credentials_redact_without_lookup) ... ok
+test_labelled_id_and_formatted_mobile_redact_without_lookup (test_review_regressions.ReviewRegressions.test_labelled_id_and_formatted_mobile_redact_without_lookup) ... ok
+test_mobile_change_during_approval_revokes_authorization (test_review_regressions.ReviewRegressions.test_mobile_change_during_approval_revokes_authorization) ... ok
+test_owner_change_during_approval_revokes_authorization (test_review_regressions.ReviewRegressions.test_owner_change_during_approval_revokes_authorization) ... ok
+test_policy_search_blocks_credentials_even_before_lookup (test_review_regressions.ReviewRegressions.test_policy_search_blocks_credentials_even_before_lookup) ... ok
+test_report_is_private_when_lookup_never_happens (test_review_regressions.ReviewRegressions.test_report_is_private_when_lookup_never_happens) ... ok
+test_unlabelled_id_echo_redacts_after_incoming_capture_without_lookup (test_review_regressions.ReviewRegressions.test_unlabelled_id_echo_redacts_after_incoming_capture_without_lookup) ... ok
+test_claiming_administrator_does_not_grant_booking_access (test_security.CapabilitySecurityTests.test_claiming_administrator_does_not_grant_booking_access) ... ok
+test_defended_tool_set_does_not_include_exfiltration_capability (test_security.CapabilitySecurityTests.test_defended_tool_set_does_not_include_exfiltration_capability) ... ok
+test_unknown_exfiltration_call_is_not_executed (test_security.CapabilitySecurityTests.test_unknown_exfiltration_call_is_not_executed) ... ok
+test_unsafe_control_is_a_real_local_outbox_not_network_email (test_security.CapabilitySecurityTests.test_unsafe_control_is_a_real_local_outbox_not_network_email) ... ok
+
+----------------------------------------------------------------------
+Ran 102 tests in 2.917s
+
+OK
