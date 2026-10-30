@@ -1,9 +1,16 @@
 {
-  "recorded_at": "2026-10-29T08:26:12.776845+00:00",
-  "live_model_chat": false,
+  "recorded_at": "2026-10-30T00:20:48.806191+00:00",
+  "live_model_chat": true,
   "verified": true,
   "health_status": 200,
   "unauthenticated_status": 401,
   "create_status": 201,
+  "chat_status": 200,
+  "reply": "**Policy POL‑05 – Inspections**  \n\n- Inspections can be booked only for permits in the status **`approved`** (e.g., BLD foundation/completion, FTR health) or **`under_review`** (FTR/EVT pre‑approval site visits).  \n- **Booking requirement:** an inspection must be scheduled **at least 2 working days** ahead of the desired date.  \n\nSo, according to POL‑05, you need to request an inspection slot no later than two working days before the date you want the inspection to take place.",
+  "usage": {
+    "charged_tokens": 24420,
+    "observed_tokens": 3813
+  },
+  "state": "complete",
   "server_stopped": true
 }

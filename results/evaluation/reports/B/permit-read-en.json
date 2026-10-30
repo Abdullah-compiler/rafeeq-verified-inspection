@@ -1,0 +1,113 @@
+{
+  "schema": "rafeeq.booking-run.v1",
+  "data": "synthetic",
+  "simulation_date": "2026-11-01",
+  "configuration": "B",
+  "stopped": "done",
+  "steps": 2,
+  "reported_cost_usd": 0.0,
+  "models": [
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free"
+  ],
+  "final": "The current status of permit **FTR-30311** is **approved**, and it is located in the **Al‑Rawdah** district.",
+  "model_final": "The current status of permit **FTR-30311** is **approved**, and it is located in the **Al‑Rawdah** district.",
+  "response_grounded_in_outcome": false,
+  "usage": {
+    "calls": 2,
+    "cache_hits": 2,
+    "input_tokens": 3397,
+    "output_tokens": 207,
+    "cost": 0.0
+  },
+  "tool_calls": [
+    {
+      "name": "get_permit",
+      "arguments": {
+        "mobile": "[redacted]",
+        "permit_id": "FTR-30311",
+        "national_id_last4": "[redacted]"
+      }
+    }
+  ],
+  "events": [
+    {
+      "event": "identity_verified",
+      "permit_id": "FTR-30311"
+    }
+  ],
+  "trace": [
+    {
+      "kind": "call",
+      "text": "get_permit({\"mobile\": \"[redacted]\", \"permit_id\": \"FTR-30311\", \"national_id_last4\": \"[redacted]\"})"
+    },
+    {
+      "kind": "result",
+      "text": "{\"permit_id\": \"FTR-30311\", \"type\": \"FTR\", \"status\": \"approved\", \"district\": \"Al-Rawdah\", \"inspections\": []}"
+    },
+    {
+      "kind": "final",
+      "text": "The current status of permit **FTR-30311** is **approved**, and it is located in the **Al‑Rawdah** district."
+    }
+  ],
+  "task_id": "permit-read-en",
+  "suite_sha256": "b5f0d187d01fa917344765df017f4b2c8f58bfabff21a68dd9eed70d78806496",
+  "status": "completed",
+  "error": null,
+  "scripted_approval": [],
+  "database_changes": {
+    "inspections": {
+      "added": [],
+      "removed": []
+    },
+    "slots": {
+      "added": [],
+      "removed": []
+    },
+    "audit_log": {
+      "added": [
+        {
+          "ts": "2026-11-01T09:00:00",
+          "actor": "rafeeq",
+          "action": "get_permit",
+          "detail": "{\"permit_id\": \"FTR-30311\"}"
+        }
+      ],
+      "removed": []
+    },
+    "permits": {
+      "added": [],
+      "removed": []
+    }
+  },
+  "grader_failures": [],
+  "provider_exchanges": [
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "tool_calls",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 1,
+        "input_tokens": 1604,
+        "output_tokens": 128,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-ilGxLVL3G8vKk8lGhAb9"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "stop",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 1,
+        "input_tokens": 1793,
+        "output_tokens": 79,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-DeIRGJjSIxtwxpKbyMr3"
+    }
+  ],
+  "raw_identity_echo": false,
+  "completed_at_utc": "2026-10-30T00:17:26.242741+00:00",
+  "cache_note": "Only authentic prior provider responses; real tools on a fresh DB. Not independent sampling."
+}

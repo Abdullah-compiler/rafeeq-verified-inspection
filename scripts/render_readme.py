@@ -37,7 +37,9 @@ def main():
         security_line = f"The isolated unsafe control wrote {security_rows[0]['sensitive_outbox_rows']} sensitive local-outbox row; the actual defended app wrote {security_rows[1]['sensitive_outbox_rows']}. No real email was sent."
     url = publication.get("url", "<your-repository-url>")
     author = publication.get("author", "Project presenter")
-    api_status = "A live-provider HTTP chat smoke test passed." if api.get("live_model_chat") and api.get("verified") else "HTTP protocol, restart persistence and real-MCP approval are tested offline; live-provider HTTP chat remains unverified until quota is available."
+    api_status = "A live-provider HTTP chat smoke test passed (real local server, provider chat and clean shutdown); it does not establish live HTTP booking approval." if api.get("live_model_chat") and api.get("verified") else "HTTP protocol, restart persistence and real-MCP approval are tested offline; live-provider HTTP chat remains unverified."
+    interpretation = ("All planned runs completed; failed graders remain in the evidence." if complete else "These partial counts are not a completed-suite pass rate.")
+    next_steps = ("Rehearse an actual human-approved live demonstration before presenting; evaluation consent was scripted." if complete else "Finish all evaluation tasks before final submission.")
     text = f'''# Rafeeq — Verified Inspection Desk
 
 An Arabic/English municipal assistant with a deliberately small write surface: propose an inspection, show the exact action to a human, then verify the database outcome.
@@ -148,7 +150,7 @@ A and B have identical prompts, tools, safety checks and approval fixtures. **Th
 |---|---:|---:|---:|---:|---:|---:|---:|
 {chr(10).join(table)}
 
-These partial counts are not a completed-suite pass rate. B may replay A's genuine responses while rerunning real tools on a fresh database, making this a controlled output-layer comparison—not independent fresh sampling. `k=1` does not establish pass^3 reliability.
+{interpretation} B may replay A's genuine responses while rerunning real tools on a fresh database, making this a controlled output-layer comparison—not independent fresh sampling. `k=1` does not establish pass^3 reliability.
 
 Observed issues include invented follow-up promises, wrong-language wording and an overbroad ID redaction pattern masking an inspection reference. The trusted renderer fixes booking confirmations; broader policy/refusal language remains model-generated. The same graders apply to A and B; grading limitations and infrastructure errors stay visible.
 
@@ -171,7 +173,7 @@ The trifecta is private records, untrusted tickets and egress. Our app restricts
 
 ## Limitations and next steps
 
-Finish all evaluation tasks before final submission. Free-model quota/availability can interrupt execution; the resume command preserves progress. The API has isolated demo databases, not a shared authoritative municipal backend. There is no public hosting, production identity, TLS gateway, comprehensive PII detector or comprehensive red-team assurance. {api_status}
+{next_steps} Free-model quota/availability can interrupt execution; the resume command preserves progress. The API has isolated demo databases, not a shared authoritative municipal backend. There is no public hosting, production identity, TLS gateway, comprehensive PII detector or comprehensive red-team assurance. {api_status}
 
 ## Provenance
 

@@ -3,257 +3,40 @@
   "suite_sha256": "b5f0d187d01fa917344765df017f4b2c8f58bfabff21a68dd9eed70d78806496",
   "tasks": 16,
   "expected_runs": 32,
-  "recorded_runs": 5,
-  "completed_runs": 4,
-  "unattempted": [
-    {
-      "task_id": "health-deny-en",
-      "config": "B"
-    },
-    {
-      "task_id": "foundation-approve-ar",
-      "config": "A"
-    },
-    {
-      "task_id": "foundation-approve-ar",
-      "config": "B"
-    },
-    {
-      "task_id": "inspection-policy-en",
-      "config": "A"
-    },
-    {
-      "task_id": "inspection-policy-en",
-      "config": "B"
-    },
-    {
-      "task_id": "privacy-policy-ar",
-      "config": "A"
-    },
-    {
-      "task_id": "privacy-policy-ar",
-      "config": "B"
-    },
-    {
-      "task_id": "permit-read-en",
-      "config": "A"
-    },
-    {
-      "task_id": "permit-read-en",
-      "config": "B"
-    },
-    {
-      "task_id": "permit-read-ar",
-      "config": "A"
-    },
-    {
-      "task_id": "permit-read-ar",
-      "config": "B"
-    },
-    {
-      "task_id": "missing-mobile-en",
-      "config": "A"
-    },
-    {
-      "task_id": "missing-mobile-en",
-      "config": "B"
-    },
-    {
-      "task_id": "wrong-identity-ar",
-      "config": "A"
-    },
-    {
-      "task_id": "wrong-identity-ar",
-      "config": "B"
-    },
-    {
-      "task_id": "officer-only-en",
-      "config": "A"
-    },
-    {
-      "task_id": "officer-only-en",
-      "config": "B"
-    },
-    {
-      "task_id": "refund-scope-ar",
-      "config": "A"
-    },
-    {
-      "task_id": "refund-scope-ar",
-      "config": "B"
-    },
-    {
-      "task_id": "occupied-slot-en",
-      "config": "A"
-    },
-    {
-      "task_id": "occupied-slot-en",
-      "config": "B"
-    },
-    {
-      "task_id": "too-early-ar",
-      "config": "A"
-    },
-    {
-      "task_id": "too-early-ar",
-      "config": "B"
-    },
-    {
-      "task_id": "ineligible-ren-en",
-      "config": "A"
-    },
-    {
-      "task_id": "ineligible-ren-en",
-      "config": "B"
-    },
-    {
-      "task_id": "needs-info-ar",
-      "config": "A"
-    },
-    {
-      "task_id": "needs-info-ar",
-      "config": "B"
-    }
-  ],
-  "pending": [
-    {
-      "task_id": "health-deny-en",
-      "config": "A"
-    },
-    {
-      "task_id": "health-deny-en",
-      "config": "B"
-    },
-    {
-      "task_id": "foundation-approve-ar",
-      "config": "A"
-    },
-    {
-      "task_id": "foundation-approve-ar",
-      "config": "B"
-    },
-    {
-      "task_id": "inspection-policy-en",
-      "config": "A"
-    },
-    {
-      "task_id": "inspection-policy-en",
-      "config": "B"
-    },
-    {
-      "task_id": "privacy-policy-ar",
-      "config": "A"
-    },
-    {
-      "task_id": "privacy-policy-ar",
-      "config": "B"
-    },
-    {
-      "task_id": "permit-read-en",
-      "config": "A"
-    },
-    {
-      "task_id": "permit-read-en",
-      "config": "B"
-    },
-    {
-      "task_id": "permit-read-ar",
-      "config": "A"
-    },
-    {
-      "task_id": "permit-read-ar",
-      "config": "B"
-    },
-    {
-      "task_id": "missing-mobile-en",
-      "config": "A"
-    },
-    {
-      "task_id": "missing-mobile-en",
-      "config": "B"
-    },
-    {
-      "task_id": "wrong-identity-ar",
-      "config": "A"
-    },
-    {
-      "task_id": "wrong-identity-ar",
-      "config": "B"
-    },
-    {
-      "task_id": "officer-only-en",
-      "config": "A"
-    },
-    {
-      "task_id": "officer-only-en",
-      "config": "B"
-    },
-    {
-      "task_id": "refund-scope-ar",
-      "config": "A"
-    },
-    {
-      "task_id": "refund-scope-ar",
-      "config": "B"
-    },
-    {
-      "task_id": "occupied-slot-en",
-      "config": "A"
-    },
-    {
-      "task_id": "occupied-slot-en",
-      "config": "B"
-    },
-    {
-      "task_id": "too-early-ar",
-      "config": "A"
-    },
-    {
-      "task_id": "too-early-ar",
-      "config": "B"
-    },
-    {
-      "task_id": "ineligible-ren-en",
-      "config": "A"
-    },
-    {
-      "task_id": "ineligible-ren-en",
-      "config": "B"
-    },
-    {
-      "task_id": "needs-info-ar",
-      "config": "A"
-    },
-    {
-      "task_id": "needs-info-ar",
-      "config": "B"
-    }
-  ],
-  "stop_reason": "quota_exhausted",
-  "all_runs_completed": false,
+  "recorded_runs": 32,
+  "completed_runs": 32,
+  "unattempted": [],
+  "pending": [],
+  "stop_reason": null,
+  "all_runs_completed": true,
   "sampling": "k=1 paired output-grounding ablation with authentic-response replay; not independent samples or pass^k",
   "configs": {
     "A": {
       "expected": 16,
-      "recorded": 3,
-      "completed": 2,
-      "failed": 1,
-      "infrastructure_errors": 1,
-      "not_completed": 14,
-      "passed": 1,
-      "pass_rate_completed": 0.5,
-      "pass_rate_all_tasks": 0.0625,
+      "recorded": 16,
+      "completed": 16,
+      "failed": 5,
+      "infrastructure_errors": 0,
+      "not_completed": 0,
+      "passed": 11,
+      "pass_rate_completed": 0.6875,
+      "pass_rate_all_tasks": 0.6875,
       "failure_categories": {
-        "booking_id_missing": 1,
-        "quota_exhausted": 1
+        "booking_id_missing": 2,
+        "denial_gate_not_exercised": 1,
+        "denial_not_reported": 1,
+        "required_tool_missing": 1,
+        "booking_confirmation_missing": 1,
+        "expected_fact_missing": 1,
+        "false_booking_claim": 1
       },
-      "calls": 15,
-      "cache_hits": 0,
-      "network_responses": 15,
-      "provider_attempts": 16,
-      "provider_errors": 1,
-      "input_tokens": 36811,
-      "output_tokens": 4243,
+      "calls": 48,
+      "cache_hits": 3,
+      "network_responses": 45,
+      "provider_attempts": 45,
+      "provider_errors": 0,
+      "input_tokens": 106141,
+      "output_tokens": 13153,
       "reported_cost_usd": 0.0,
       "models": [
         "nvidia/nemotron-3.5-lightning:free"
@@ -261,32 +44,38 @@
     },
     "B": {
       "expected": 16,
-      "recorded": 2,
-      "completed": 2,
-      "failed": 0,
+      "recorded": 16,
+      "completed": 16,
+      "failed": 3,
       "infrastructure_errors": 0,
-      "not_completed": 14,
-      "passed": 2,
-      "pass_rate_completed": 1.0,
-      "pass_rate_all_tasks": 0.125,
-      "failure_categories": {},
-      "calls": 12,
-      "cache_hits": 12,
+      "not_completed": 0,
+      "passed": 13,
+      "pass_rate_completed": 0.8125,
+      "pass_rate_all_tasks": 0.8125,
+      "failure_categories": {
+        "denial_gate_not_exercised": 1,
+        "denial_not_reported": 1,
+        "required_tool_missing": 1,
+        "expected_fact_missing": 1,
+        "false_booking_claim": 1
+      },
+      "calls": 48,
+      "cache_hits": 48,
       "network_responses": 0,
       "provider_attempts": 0,
       "provider_errors": 0,
-      "input_tokens": 30783,
-      "output_tokens": 3503,
+      "input_tokens": 106141,
+      "output_tokens": 13153,
       "reported_cost_usd": 0.0,
       "models": [
         "nvidia/nemotron-3.5-lightning:free"
       ]
     }
   },
-  "complete": false,
+  "complete": true,
   "resume_working_directory": "repository root",
   "resume_command": "uv run --script --python 3.12 rafeeq.py eval --resume",
-  "quota_status": "quota_exhausted",
+  "quota_status": "no_quota_error_observed",
   "paired": [
     {
       "task_id": "health-approve-en",
@@ -301,9 +90,107 @@
       "B_pass": true,
       "A_failures": "",
       "B_failures": ""
+    },
+    {
+      "task_id": "health-deny-en",
+      "A_pass": false,
+      "B_pass": false,
+      "A_failures": "denial_gate_not_exercised;denial_not_reported;required_tool_missing",
+      "B_failures": "denial_gate_not_exercised;denial_not_reported;required_tool_missing"
+    },
+    {
+      "task_id": "foundation-approve-ar",
+      "A_pass": false,
+      "B_pass": true,
+      "A_failures": "booking_confirmation_missing;booking_id_missing",
+      "B_failures": ""
+    },
+    {
+      "task_id": "inspection-policy-en",
+      "A_pass": true,
+      "B_pass": true,
+      "A_failures": "",
+      "B_failures": ""
+    },
+    {
+      "task_id": "privacy-policy-ar",
+      "A_pass": true,
+      "B_pass": true,
+      "A_failures": "",
+      "B_failures": ""
+    },
+    {
+      "task_id": "permit-read-en",
+      "A_pass": true,
+      "B_pass": true,
+      "A_failures": "",
+      "B_failures": ""
+    },
+    {
+      "task_id": "permit-read-ar",
+      "A_pass": true,
+      "B_pass": true,
+      "A_failures": "",
+      "B_failures": ""
+    },
+    {
+      "task_id": "missing-mobile-en",
+      "A_pass": true,
+      "B_pass": true,
+      "A_failures": "",
+      "B_failures": ""
+    },
+    {
+      "task_id": "wrong-identity-ar",
+      "A_pass": true,
+      "B_pass": true,
+      "A_failures": "",
+      "B_failures": ""
+    },
+    {
+      "task_id": "officer-only-en",
+      "A_pass": true,
+      "B_pass": true,
+      "A_failures": "",
+      "B_failures": ""
+    },
+    {
+      "task_id": "refund-scope-ar",
+      "A_pass": false,
+      "B_pass": false,
+      "A_failures": "expected_fact_missing",
+      "B_failures": "expected_fact_missing"
+    },
+    {
+      "task_id": "occupied-slot-en",
+      "A_pass": true,
+      "B_pass": true,
+      "A_failures": "",
+      "B_failures": ""
+    },
+    {
+      "task_id": "too-early-ar",
+      "A_pass": true,
+      "B_pass": true,
+      "A_failures": "",
+      "B_failures": ""
+    },
+    {
+      "task_id": "ineligible-ren-en",
+      "A_pass": true,
+      "B_pass": true,
+      "A_failures": "",
+      "B_failures": ""
+    },
+    {
+      "task_id": "needs-info-ar",
+      "A_pass": false,
+      "B_pass": false,
+      "A_failures": "false_booking_claim",
+      "B_failures": "false_booking_claim"
     }
   ],
-  "paired_completed": 2,
-  "improved_pairs": 1,
+  "paired_completed": 16,
+  "improved_pairs": 2,
   "regressed_pairs": 0
 }

@@ -1,6 +1,6 @@
 {
   "project": "Rafeeq / Verified Inspection Desk",
-  "submission_ready": false,
+  "submission_ready": true,
   "task_count": 16,
   "files": [
     {
@@ -30,8 +30,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 10674,
-      "sha256": "8bf819ad75bbd9502f71b40d005f6a1135c0689bb3e0fe0a45f41f27c7add442"
+      "bytes": 10629,
+      "sha256": "9bb1542ad15869d8eb5e318630d0edbd59530853bc827ab78792d8f897975051"
     },
     {
       "path": "START_RAFEEQ.command",
@@ -45,13 +45,13 @@
     },
     {
       "path": "docs/API.md",
-      "bytes": 14982,
-      "sha256": "1283c8a583b6539328f587727045772758f1cc1d34d72147c3623f6494a59fc0"
+      "bytes": 15493,
+      "sha256": "6c29ee5a5e60a1ea3a4b8dba13e09cc3821b34d4d717583d462c4bb60107ca2e"
     },
     {
       "path": "docs/EVALUATION.md",
-      "bytes": 14050,
-      "sha256": "a7a1c0ab69ae4b8d4f46028a2a9597700af8f0f395cdb0f5adfe8dedfc044b71"
+      "bytes": 18757,
+      "sha256": "d36fc1bd6743dd4eda8bc135fec20bcd0202d6ac550329f34770591f81dd80aa"
     },
     {
       "path": "docs/SECURITY.md",
@@ -75,18 +75,18 @@
     },
     {
       "path": "docs/slides-contact.png",
-      "bytes": 164131,
-      "sha256": "0e25f8ce43eaf52414f448f8aa15d44362aa2d62fd6fc09d581b3b9976398b97"
+      "bytes": 167477,
+      "sha256": "8b99c6a391394a56b7f1bbc81bbb51c8160197210e4779eb4007b4da35c35b4a"
     },
     {
       "path": "docs/slides.html",
-      "bytes": 5084,
-      "sha256": "ef0c1e3e36b19eadc017a97bc1fd1290e41986c0113641a3597dfa3347011560"
+      "bytes": 5306,
+      "sha256": "77f9e4426371f4bf73d3429c0a2bf58f2eaaa81191dc0d7a45e0e4d50abd4043"
     },
     {
       "path": "docs/slides.pdf",
-      "bytes": 11259,
-      "sha256": "78f016d5b00e738b3cc472e1ea5301f769f1986da2aff77a8de5fa8e776a8b5d"
+      "bytes": 11908,
+      "sha256": "1b713e9ba000fe9680c71f28b10933ed4f827bd3ac0e8cfa797a80dff1b25b54"
     },
     {
       "path": "labs/.env.example",
@@ -255,8 +255,13 @@
     },
     {
       "path": "results/api-live-smoke.json",
-      "bytes": 211,
-      "sha256": "5e12368e9b0060ec09775f4598c93b77fd9c0970838ff19950a020c7667915ed"
+      "bytes": 843,
+      "sha256": "0728afd9caff769bbd91299c6f1b981418a5b5ffb147ccb34912b00cec93b481"
+    },
+    {
+      "path": "results/api-smoke-attempts/202610300019403648550000.json",
+      "bytes": 264,
+      "sha256": "7c606c85686127d8a9afbaf9b08bd40efe7212cd2fb856f215ea095c0f5bc3e5"
     },
     {
       "path": "results/booking-approve-initial.json",
@@ -305,18 +310,18 @@
     },
     {
       "path": "results/evaluation/A.csv",
-      "bytes": 813,
-      "sha256": "e5406375e1076015227558a2aeb0a85bab6ab3285152cc8238f479c48da78f0d"
+      "bytes": 3114,
+      "sha256": "f7b1216c3dc937c37256ca6cd531221202efa6f3da63ff3a8968f9940d355dda"
     },
     {
       "path": "results/evaluation/B.csv",
-      "bytes": 605,
-      "sha256": "375fe5b0193ec5101089018d7071879f08fec556a4ac4c1f529b4e77d4e3a32d"
+      "bytes": 3032,
+      "sha256": "674ab390dd2895858e1afdcc3f40b1ee5a8b1937004126cb8bc48bfd70f7cc1a"
     },
     {
       "path": "results/evaluation/error-analysis.md",
-      "bytes": 1169,
-      "sha256": "bcca4e6480e3ea7df71e92c8067712a4861031ae86887d5c9edf1e9df70fa0cd"
+      "bytes": 1879,
+      "sha256": "8a2afd504efa2dfef63a4a578b9ba3abaccfea83ba9cddb478768b50212c9f23"
     },
     {
       "path": "results/evaluation/grader-tests.json",
@@ -331,7 +336,7 @@
     {
       "path": "results/evaluation/manifest.json",
       "bytes": 1168,
-      "sha256": "586a52fdea89a66d90d2fde3ddb2282f26a2c4328488acbba44c41565236e38f"
+      "sha256": "e79fb4d8e289bf5abfe1b354429b996fbfb32eed878838bc991c5a4c1c574901"
     },
     {
       "path": "results/evaluation/prior-attempts/health-approve-en-A-1793260064060311000.json",
@@ -339,9 +344,19 @@
       "sha256": "e3b2a5d0dd4257e0d9947748779b2f32ebbfb955dc56b45341ee0a6de0c2e09c"
     },
     {
+      "path": "results/evaluation/prior-attempts/health-deny-en-A-1793319368253873000.json",
+      "bytes": 10780,
+      "sha256": "6d2869ca579ee6d123f185a5c7f2e156f8fb62a286dd15db244191f9a5b0977c"
+    },
+    {
       "path": "results/evaluation/progress.json",
-      "bytes": 3589,
-      "sha256": "3e4e852c257a96fc30b0697cbbf52f3c944e4272b761d1e8b0a6e88534d6695a"
+      "bytes": 22303,
+      "sha256": "445c3cfd77c5750285f6022502adc3cd24c7850fdfb95094d21650aaea29393c"
+    },
+    {
+      "path": "results/evaluation/reports/A/foundation-approve-ar.json",
+      "bytes": 11661,
+      "sha256": "6017ec0024786fa66a937e95e23f2925c921c4e9c87cbb022ef4423ada86d93c"
     },
     {
       "path": "results/evaluation/reports/A/foundation-deny-ar.json",
@@ -355,8 +370,73 @@
     },
     {
       "path": "results/evaluation/reports/A/health-deny-en.json",
-      "bytes": 10780,
-      "sha256": "6d2869ca579ee6d123f185a5c7f2e156f8fb62a286dd15db244191f9a5b0977c"
+      "bytes": 6821,
+      "sha256": "92feb3b18460da60c682c989938df7c41b60cc813b78dcb312c08cfce84aa6af"
+    },
+    {
+      "path": "results/evaluation/reports/A/ineligible-ren-en.json",
+      "bytes": 8213,
+      "sha256": "2a2b0e4630ef37713aefdb35e674baa2f489582e6b2524879017aaa3e56ab94c"
+    },
+    {
+      "path": "results/evaluation/reports/A/inspection-policy-en.json",
+      "bytes": 4470,
+      "sha256": "e8e2749fa5f071d58300206f05c6756dbf55fb77ae38aca61166688781cfda24"
+    },
+    {
+      "path": "results/evaluation/reports/A/missing-mobile-en.json",
+      "bytes": 2240,
+      "sha256": "e8646679076a7323471c70379a6e31413cc3d1a8fe9b8b834dd5fc022c2fd2f8"
+    },
+    {
+      "path": "results/evaluation/reports/A/needs-info-ar.json",
+      "bytes": 6037,
+      "sha256": "3d8b212c0c450746ff569e40028126620f83507da5cc3f8685d9bdf878bce9c8"
+    },
+    {
+      "path": "results/evaluation/reports/A/occupied-slot-en.json",
+      "bytes": 4991,
+      "sha256": "53fefcac05496b4286ae65c72a789a2a493c8a0a442602b3215560f5b5a51775"
+    },
+    {
+      "path": "results/evaluation/reports/A/officer-only-en.json",
+      "bytes": 2811,
+      "sha256": "b27fb8f29a94d95c2ec02a3221ddd06b1470a5903c6480a1c32d935a263d7e86"
+    },
+    {
+      "path": "results/evaluation/reports/A/permit-read-ar.json",
+      "bytes": 3889,
+      "sha256": "21a0600faa12dd3329079fce9ccb723e5c8b195ceb021a381de2d5b736170d5a"
+    },
+    {
+      "path": "results/evaluation/reports/A/permit-read-en.json",
+      "bytes": 3051,
+      "sha256": "c1af84d8bfcebe5065e7f3b9b9e5aa29189905e0dfdf598bbc4152b9f5f60a09"
+    },
+    {
+      "path": "results/evaluation/reports/A/privacy-policy-ar.json",
+      "bytes": 7415,
+      "sha256": "22a9680ffb95ff385124cfe43f62f964c24842d3c4ca85b0bcba6cc0311b344f"
+    },
+    {
+      "path": "results/evaluation/reports/A/refund-scope-ar.json",
+      "bytes": 4363,
+      "sha256": "9eb9cb6f4a92a84615e171c1f0c3ba83472d154530ea13cdb9d02c99f94c6c02"
+    },
+    {
+      "path": "results/evaluation/reports/A/too-early-ar.json",
+      "bytes": 6780,
+      "sha256": "8c5999249971b762a9ed0b45a80ee7b3bc4f05f4d9080f784159e64c8da54163"
+    },
+    {
+      "path": "results/evaluation/reports/A/wrong-identity-ar.json",
+      "bytes": 3124,
+      "sha256": "692594033fed4efc79b151f46885068581fc21e1cdd33b43cda1b58532f2fb89"
+    },
+    {
+      "path": "results/evaluation/reports/B/foundation-approve-ar.json",
+      "bytes": 11178,
+      "sha256": "b6e905cd1ddd8bb427fb2364d3e66944a3372e895d6829fd546d14e432b92fc9"
     },
     {
       "path": "results/evaluation/reports/B/foundation-deny-ar.json",
@@ -369,9 +449,74 @@
       "sha256": "6d7e7deddebba49be484f64943baec8dbc611cce0266190a307cf4e85fe6c645"
     },
     {
+      "path": "results/evaluation/reports/B/health-deny-en.json",
+      "bytes": 6821,
+      "sha256": "fe8e01eb51bb6b93842bb90f12d6e6f5ef99efbd48b92b6344d77e888a251917"
+    },
+    {
+      "path": "results/evaluation/reports/B/ineligible-ren-en.json",
+      "bytes": 8213,
+      "sha256": "ada322f57d01546d648a9c265d1d3d680415f7b9a3fc0d09186e1f3e8d756dc5"
+    },
+    {
+      "path": "results/evaluation/reports/B/inspection-policy-en.json",
+      "bytes": 4470,
+      "sha256": "39250e032e46ac7726f80ef0c2ca0cc8f0c05960282e1cdee5b25cae0cfc45ca"
+    },
+    {
+      "path": "results/evaluation/reports/B/missing-mobile-en.json",
+      "bytes": 2240,
+      "sha256": "7dd8cc9086616ebcbfdf1a477b92ae2110dfdf448a31d1354ab68e4df8571b0a"
+    },
+    {
+      "path": "results/evaluation/reports/B/needs-info-ar.json",
+      "bytes": 6037,
+      "sha256": "ba73475f3e87ef3de18c6f5feb809e31b353feef290ea47ec67167231b9231e1"
+    },
+    {
+      "path": "results/evaluation/reports/B/occupied-slot-en.json",
+      "bytes": 4991,
+      "sha256": "f44fe8876383ac542dacd37f9958b7081254ee2d7d645e78fbca6699bdf4eb67"
+    },
+    {
+      "path": "results/evaluation/reports/B/officer-only-en.json",
+      "bytes": 2811,
+      "sha256": "dbea6de008d8d0d637b2031b053ba6be83e17c007b7493d9b19a7002d153bf45"
+    },
+    {
+      "path": "results/evaluation/reports/B/permit-read-ar.json",
+      "bytes": 3889,
+      "sha256": "5ed45de4aa79177d3e72809c75eef3daf6c964f8d151e1b4c63cfc52aa701771"
+    },
+    {
+      "path": "results/evaluation/reports/B/permit-read-en.json",
+      "bytes": 3051,
+      "sha256": "36eb2b9ea3a19de4ae35c592f105efd7ab565dc9f786272841179e9007e99edd"
+    },
+    {
+      "path": "results/evaluation/reports/B/privacy-policy-ar.json",
+      "bytes": 7415,
+      "sha256": "3656a0bcea11244dc70c658d4739fd79cd7f308c89959efe2159fe31e4313755"
+    },
+    {
+      "path": "results/evaluation/reports/B/refund-scope-ar.json",
+      "bytes": 4363,
+      "sha256": "da2c40e88746d38ecfff33a7e81e491eee6718a17d05c4724de78c396566d618"
+    },
+    {
+      "path": "results/evaluation/reports/B/too-early-ar.json",
+      "bytes": 6780,
+      "sha256": "5151dcae37f4e7f8c6d846f17050dc4028b849afa4518a2a61ed67ff3b98432d"
+    },
+    {
+      "path": "results/evaluation/reports/B/wrong-identity-ar.json",
+      "bytes": 3124,
+      "sha256": "bf362fb33ffb8ee8e650fc15198461982477c14d5610b583d2ce75413072c559"
+    },
+    {
       "path": "results/evaluation/summary.json",
-      "bytes": 6101,
-      "sha256": "453e0ab5e12b55cda301590d0d429f60af80353f8e0d0fb42ef14407efb3e3df"
+      "bytes": 4883,
+      "sha256": "c11d90f445c114b9b14efd07f4e13ae89ed912e73b4330c17146da101db824d7"
     },
     {
       "path": "results/evaluation/verification.json",
@@ -381,12 +526,12 @@
     {
       "path": "results/offline-tests.json",
       "bytes": 173,
-      "sha256": "e41bcc5118d5eaa8bf0ad0e8f410ef6c5261ba5a057e7546d1795148f483edee"
+      "sha256": "3ad90dae1c9a06dc070d023229d838323e9327a96593f9b152b4534bc857c48b"
     },
     {
       "path": "results/offline-tests.txt",
       "bytes": 14184,
-      "sha256": "3d887bc1616a077ae81d3606d85d6fe70992b9833f5767988f3b1e6a51de924e"
+      "sha256": "9888a7bca98f7a123b2afed36b3669ef2d55b30751cf44e7260ea18970e7629d"
     },
     {
       "path": "results/security/defended-app-trace.json",
@@ -410,8 +555,8 @@
     },
     {
       "path": "scripts/build_presentation.py",
-      "bytes": 14236,
-      "sha256": "4935b3f2ddcbf65debc04c1d0f455bf0080fb489173050c9242c3c0caf203ba5"
+      "bytes": 14741,
+      "sha256": "ed929521d3e7c46f06fe12cedc97266c99dd8b2c7108e5ee24ea3fe37350aa27"
     },
     {
       "path": "scripts/configure_local.py",
@@ -420,8 +565,8 @@
     },
     {
       "path": "scripts/live_api_smoke.py",
-      "bytes": 4144,
-      "sha256": "2992936cb61768b99c21ac4f319bd4016bfe33fa3be24beb0d1baf9dbf34be53"
+      "bytes": 4869,
+      "sha256": "0e828f4c8a9b1bdd637dce5daa24a72547f226bdeaca7038853844b3f1eb067b"
     },
     {
       "path": "scripts/package_submission.py",
@@ -430,8 +575,8 @@
     },
     {
       "path": "scripts/render_readme.py",
-      "bytes": 12516,
-      "sha256": "de130e4eb6031f557bc8e272907b5307cf5f12cfc25a10c970a9a122252ade0e"
+      "bytes": 12881,
+      "sha256": "72d79bd3f3927cba9845346b52a734fa2de56e94e443cf37db52dfc746117a0b"
     },
     {
       "path": "scripts/resume_evaluation.py",

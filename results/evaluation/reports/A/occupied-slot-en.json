@@ -1,0 +1,147 @@
+{
+  "schema": "rafeeq.booking-run.v1",
+  "data": "synthetic",
+  "simulation_date": "2026-11-01",
+  "configuration": "A",
+  "stopped": "done",
+  "steps": 3,
+  "reported_cost_usd": 0.0,
+  "models": [
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free"
+  ],
+  "final": "The slot **2026‑11‑04 08:00** is not available for permit **FTR‑30311** (district Al‑Rawdah).  \n\nThe only free slots within the requested period are:\n\n- 3 Nov 2026 12:00  \n- 3 Nov 2026 13:00  \n- 4 Nov 2026 09:00  \n\nSince you asked to try only the 08:00 slot and to avoid booking an alternative if it’s unavailable, no inspection will be booked. If you’d like to select one of the listed slots instead, just let me know.",
+  "model_final": "The slot **2026‑11‑04 08:00** is not available for permit **FTR‑30311** (district Al‑Rawdah).  \n\nThe only free slots within the requested period are:\n\n- 3 Nov 2026 12:00  \n- 3 Nov 2026 13:00  \n- 4 Nov 2026 09:00  \n\nSince you asked to try only the 08:00 slot and to avoid booking an alternative if it’s unavailable, no inspection will be booked. If you’d like to select one of the listed slots instead, just let me know.",
+  "response_grounded_in_outcome": false,
+  "usage": {
+    "calls": 3,
+    "cache_hits": 0,
+    "input_tokens": 5841,
+    "output_tokens": 778,
+    "cost": 0.0
+  },
+  "tool_calls": [
+    {
+      "name": "get_permit",
+      "arguments": {
+        "national_id_last4": "[redacted]",
+        "permit_id": "FTR-30311",
+        "mobile": "[redacted]"
+      }
+    },
+    {
+      "name": "list_slots",
+      "arguments": {
+        "district": "Al-Rawdah",
+        "date_to": "2026-11-04",
+        "date_from": "2026-11-01"
+      }
+    }
+  ],
+  "events": [
+    {
+      "event": "identity_verified",
+      "permit_id": "FTR-30311"
+    },
+    {
+      "event": "slots_listed",
+      "district": "Al-Rawdah",
+      "count": 3
+    }
+  ],
+  "trace": [
+    {
+      "kind": "call",
+      "text": "get_permit({\"national_id_last4\": \"[redacted]\", \"permit_id\": \"FTR-30311\", \"mobile\": \"[redacted]\"})"
+    },
+    {
+      "kind": "result",
+      "text": "{\"permit_id\": \"FTR-30311\", \"type\": \"FTR\", \"status\": \"approved\", \"district\": \"Al-Rawdah\", \"inspections\": []}"
+    },
+    {
+      "kind": "call",
+      "text": "list_slots({\"district\": \"Al-Rawdah\", \"date_to\": \"2026-11-04\", \"date_from\": \"2026-11-01\"})"
+    },
+    {
+      "kind": "result",
+      "text": "[\"2026-11-03 12:00\", \"2026-11-03 13:00\", \"2026-11-04 09:00\"]"
+    },
+    {
+      "kind": "final",
+      "text": "The slot **2026‑11‑04 08:00** is not available for permit **FTR‑30311** (district Al‑Rawdah).  \n\nThe only free slots within the requested period are:\n\n- 3 Nov 2026 12:00  \n- 3 Nov 2026 13:00  \n- 4 Nov 2026 09:00  \n\nSince you asked to try only the 08:00 slot and to avoid booking an alternative if it’s unavailable, no inspection will be booked. If you’d like to select one of the listed slots instead, just let me know."
+    }
+  ],
+  "task_id": "occupied-slot-en",
+  "suite_sha256": "b5f0d187d01fa917344765df017f4b2c8f58bfabff21a68dd9eed70d78806496",
+  "status": "completed",
+  "error": null,
+  "scripted_approval": [],
+  "database_changes": {
+    "inspections": {
+      "added": [],
+      "removed": []
+    },
+    "slots": {
+      "added": [],
+      "removed": []
+    },
+    "audit_log": {
+      "added": [
+        {
+          "ts": "2026-11-01T09:00:00",
+          "actor": "rafeeq",
+          "action": "get_permit",
+          "detail": "{\"permit_id\": \"FTR-30311\"}"
+        }
+      ],
+      "removed": []
+    },
+    "permits": {
+      "added": [],
+      "removed": []
+    }
+  },
+  "grader_failures": [],
+  "provider_exchanges": [
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "tool_calls",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 0,
+        "input_tokens": 1627,
+        "output_tokens": 276,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-wRrImLh5Sfi3VnXC8MMM"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "tool_calls",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 0,
+        "input_tokens": 1964,
+        "output_tokens": 216,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-DEsVYBRFdf7muhi40jTc"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "stop",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 0,
+        "input_tokens": 2250,
+        "output_tokens": 286,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-ILJtBvNuEOtyKP5AL4k0"
+    }
+  ],
+  "raw_identity_echo": false,
+  "completed_at_utc": "2026-10-30T00:18:36.665569+00:00",
+  "cache_note": "Only authentic prior provider responses; real tools on a fresh DB. Not independent sampling."
+}

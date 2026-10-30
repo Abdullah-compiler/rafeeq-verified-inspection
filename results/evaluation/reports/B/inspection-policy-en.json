@@ -1,0 +1,107 @@
+{
+  "schema": "rafeeq.booking-run.v1",
+  "data": "synthetic",
+  "simulation_date": "2026-11-01",
+  "configuration": "B",
+  "stopped": "done",
+  "steps": 2,
+  "reported_cost_usd": 0.0,
+  "models": [
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free"
+  ],
+  "final": "**Minimum notice for an inspection:** Book at least **2 working days** in advance (POL‑05).  \n\n**Free cancellation:** You may reschedule or cancel **up to 24 hours** before the scheduled slot without a charge (POL‑05).",
+  "model_final": "**Minimum notice for an inspection:** Book at least **2 working days** in advance (POL‑05).  \n\n**Free cancellation:** You may reschedule or cancel **up to 24 hours** before the scheduled slot without a charge (POL‑05).",
+  "response_grounded_in_outcome": false,
+  "usage": {
+    "calls": 2,
+    "cache_hits": 2,
+    "input_tokens": 3692,
+    "output_tokens": 324,
+    "cost": 0.0
+  },
+  "tool_calls": [
+    {
+      "name": "search_policies",
+      "arguments": {
+        "k": 5,
+        "query": "POL-05"
+      }
+    }
+  ],
+  "events": [
+    {
+      "event": "policy_retrieved",
+      "policy_ids": [
+        "POL-05"
+      ]
+    }
+  ],
+  "trace": [
+    {
+      "kind": "call",
+      "text": "search_policies({\"k\": 5, \"query\": \"POL-05\"})"
+    },
+    {
+      "kind": "result",
+      "text": "[{\"policy_id\": \"POL-05\", \"title\": \"Inspections\", \"text\": \"# Inspections\\n\\nInspections are booked on the portal or through an authorized assistant.\\n\\n- Slots: **Sunday to Thursday, 08:00–14:00**, one hour each (08:00, 09:00, … 13:00).\\n- An inspection can be booked only for a permit in status `approved` (BLD foundation and completion inspections,\\n  FTR health inspections) or `under_review` (FTR and EVT pre-approval site visits).\\n- Book at least **2 working days** ahead.\\n- Reschedule or cancel free of charge up to **24 hours** before the slot.\\n- A missed inspection costs a **150 SAR rebooking fee** (POL-02).\\n- Each district has its own inspection team; an applicant books the team of the permit's district.\\n\\n## Results\\n\\n`passed`, `failed` (with findings; the applicant fixes them and books a re-inspection free of charge within 30 days),\\nor `no_show`.\\n\\n## الملخص بالعربية\\n\\nمواعيد الفحص من الأحد إلى الخميس من 8 صباحًا إلى 2 ظهرًا، بساعة لكل موعد، وتُحجز قبل يومي عمل على الأقل.\\nيمكن إعادة الجدولة أو الإلغاء مجانًا حتى 24 ساعة قبل الموعد. الموعد الفائت عليه رسم إعادة حجز 150 ريالًا.\\nعند الإخفاق يصلح مقدم الطلب الملاحظات ويحجز إعادة فحص مجانية خلال 30 يومًا.\"}]"
+    },
+    {
+      "kind": "final",
+      "text": "**Minimum notice for an inspection:** Book at least **2 working days** in advance (POL‑05).  \n\n**Free cancellation:** You may reschedule or cancel **up to 24 hours** before the scheduled slot without a charge (POL‑05)."
+    }
+  ],
+  "task_id": "inspection-policy-en",
+  "suite_sha256": "b5f0d187d01fa917344765df017f4b2c8f58bfabff21a68dd9eed70d78806496",
+  "status": "completed",
+  "error": null,
+  "scripted_approval": [],
+  "database_changes": {
+    "inspections": {
+      "added": [],
+      "removed": []
+    },
+    "slots": {
+      "added": [],
+      "removed": []
+    },
+    "audit_log": {
+      "added": [],
+      "removed": []
+    },
+    "permits": {
+      "added": [],
+      "removed": []
+    }
+  },
+  "grader_failures": [],
+  "provider_exchanges": [
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "tool_calls",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 1,
+        "input_tokens": 1589,
+        "output_tokens": 128,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-auwYHQcfFovazKxwd1ZT"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "stop",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 1,
+        "input_tokens": 2103,
+        "output_tokens": 196,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-vEKeSNAhu1C5yLPIlaKi"
+    }
+  ],
+  "raw_identity_echo": false,
+  "completed_at_utc": "2026-10-30T00:16:53.148570+00:00",
+  "cache_note": "Only authentic prior provider responses; real tools on a fresh DB. Not independent sampling."
+}

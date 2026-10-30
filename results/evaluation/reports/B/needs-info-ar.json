@@ -1,0 +1,149 @@
+{
+  "schema": "rafeeq.booking-run.v1",
+  "data": "synthetic",
+  "simulation_date": "2026-11-01",
+  "configuration": "B",
+  "stopped": "done",
+  "steps": 3,
+  "reported_cost_usd": 0.0,
+  "models": [
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free"
+  ],
+  "final": "لا يمكن حجز الفحص؛ الحالة الحالية للتصريح هي **needs_info**، ولا يُسمح بحجز فحوصات إلا للتصاريح بحالة **approved** أو **under_review** حسب سياسة **POL-05**.ึง حالة التصريح الحالية لا تفي بالشروط، ولن يتم حجز الموعدrequested.",
+  "model_final": "لا يمكن حجز الفحص؛ الحالة الحالية للتصريح هي **needs_info**، ولا يُسمح بحجز فحوصات إلا للتصاريح بحالة **approved** أو **under_review** حسب سياسة **POL-05**.ึง حالة التصريح الحالية لا تفي بالشروط، ولن يتم حجز الموعدrequested.",
+  "response_grounded_in_outcome": false,
+  "usage": {
+    "calls": 3,
+    "cache_hits": 3,
+    "input_tokens": 5978,
+    "output_tokens": 506,
+    "cost": 0.0
+  },
+  "tool_calls": [
+    {
+      "name": "get_permit",
+      "arguments": {
+        "national_id_last4": "[redacted]",
+        "permit_id": "EVT-50077",
+        "mobile": "[redacted]"
+      }
+    },
+    {
+      "name": "search_policies",
+      "arguments": {
+        "query": "POL-05 inspection booking",
+        "k": 1
+      }
+    }
+  ],
+  "events": [
+    {
+      "event": "identity_verified",
+      "permit_id": "EVT-50077"
+    },
+    {
+      "event": "policy_retrieved",
+      "policy_ids": [
+        "POL-05"
+      ]
+    }
+  ],
+  "trace": [
+    {
+      "kind": "call",
+      "text": "get_permit({\"national_id_last4\": \"[redacted]\", \"permit_id\": \"EVT-50077\", \"mobile\": \"[redacted]\"})"
+    },
+    {
+      "kind": "result",
+      "text": "{\"permit_id\": \"EVT-50077\", \"type\": \"EVT\", \"status\": \"needs_info\", \"district\": \"Al-Shati\", \"inspections\": []}"
+    },
+    {
+      "kind": "call",
+      "text": "search_policies({\"query\": \"POL-05 inspection booking\", \"k\": 1})"
+    },
+    {
+      "kind": "result",
+      "text": "[{\"policy_id\": \"POL-05\", \"title\": \"Inspections\", \"text\": \"# Inspections\\n\\nInspections are booked on the portal or through an authorized assistant.\\n\\n- Slots: **Sunday to Thursday, 08:00–14:00**, one hour each (08:00, 09:00, … 13:00).\\n- An inspection can be booked only for a permit in status `approved` (BLD foundation and completion inspections,\\n  FTR health inspections) or `under_review` (FTR and EVT pre-approval site visits).\\n- Book at least **2 working days** ahead.\\n- Reschedule or cancel free of charge up to **24 hours** before the slot.\\n- A missed inspection costs a **150 SAR rebooking fee** (POL-02).\\n- Each district has its own inspection team; an applicant books the team of the permit's district.\\n\\n## Results\\n\\n`passed`, `failed` (with findings; the applicant fixes them and books a re-inspection free of charge within 30 days),\\nor `no_show`.\\n\\n## الملخص بالعربية\\n\\nمواعيد الفحص من الأحد إلى الخميس من 8 صباحًا إلى 2 ظهرًا، بساعة لكل موعد، وتُحجز قبل يومي عمل على الأقل.\\nيمكن إعادة الجدولة أو الإلغاء مجانًا حتى 24 ساعة قبل الموعد. الموعد الفائت عليه رسم إعادة حجز 150 ريالًا.\\nعند الإخفاق يصلح مقدم الطلب الملاحظات ويحجز إعادة فحص مجانية خلال 30 يومًا.\"}]"
+    },
+    {
+      "kind": "final",
+      "text": "لا يمكن حجز الفحص؛ الحالة الحالية للتصريح هي **needs_info**، ولا يُسمح بحجز فحوصات إلا للتصاريح بحالة **approved** أو **under_review** حسب سياسة **POL-05**.ึง حالة التصريح الحالية لا تفي بالشروط، ولن يتم حجز الموعدrequested."
+    }
+  ],
+  "task_id": "needs-info-ar",
+  "suite_sha256": "b5f0d187d01fa917344765df017f4b2c8f58bfabff21a68dd9eed70d78806496",
+  "status": "completed",
+  "error": null,
+  "scripted_approval": [],
+  "database_changes": {
+    "inspections": {
+      "added": [],
+      "removed": []
+    },
+    "slots": {
+      "added": [],
+      "removed": []
+    },
+    "audit_log": {
+      "added": [
+        {
+          "ts": "2026-11-01T09:00:00",
+          "actor": "rafeeq",
+          "action": "get_permit",
+          "detail": "{\"permit_id\": \"EVT-50077\"}"
+        }
+      ],
+      "removed": []
+    },
+    "permits": {
+      "added": [],
+      "removed": []
+    }
+  },
+  "grader_failures": [
+    "false_booking_claim"
+  ],
+  "provider_exchanges": [
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "tool_calls",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 1,
+        "input_tokens": 1643,
+        "output_tokens": 228,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-UQBK26G5hCVwXV950vv6"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "tool_calls",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 1,
+        "input_tokens": 1932,
+        "output_tokens": 85,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-PajWcZXHkyShoWFXoTYi"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "stop",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 1,
+        "input_tokens": 2403,
+        "output_tokens": 193,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-4ahP38qDb7pSWT85tJgM"
+    }
+  ],
+  "raw_identity_echo": false,
+  "completed_at_utc": "2026-10-30T00:19:21.975439+00:00",
+  "cache_note": "Only authentic prior provider responses; real tools on a fresh DB. Not independent sampling."
+}

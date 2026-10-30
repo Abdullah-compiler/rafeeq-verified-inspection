@@ -2,7 +2,7 @@
 
 An Arabic/English municipal assistant with a deliberately small write surface: propose an inspection, show the exact action to a human, then verify the database outcome.
 
-**Evaluation in progress — not yet ready for final submission.** 2/16 task pairs are complete. OpenRouter's daily free quota stopped the run; the owner chose to wait for the reset, with no purchase or paid-model switch.
+**Evaluation complete:** all 16 tasks ran on A and B. Inspect failures and limitations before presenting.
 
 **Author:** Abdullah Alkhayal · **Track:** Rafeeq in production · **Program:** SDAIA Academy Agentic AI Systems Engineering
 
@@ -98,7 +98,7 @@ The CLI keeps conversation state only in memory. The API keeps durable proposal/
 
 Core endpoints: `/sessions`, `/sessions/{session_id}/chat`, `/officer/approvals`, and the exact-proposal officer decision endpoint. Applicants also need a per-session capability; officers have a separate bearer role. Pending proposals survive restarts and require fresh synthetic identity details at approval time. Expiry uses the real clock, while booking dates use the simulation clock.
 
-HTTP protocol, restart persistence and real-MCP approval are tested offline; live-provider HTTP chat remains unverified until quota is available. Full protocol, budgets, authentication and limitations: [docs/API.md](docs/API.md).
+A live-provider HTTP chat smoke test passed (real local server, provider chat and clean shutdown); it does not establish live HTTP booking approval. Full protocol, budgets, authentication and limitations: [docs/API.md](docs/API.md).
 
 ## Evaluation and error analysis
 
@@ -106,10 +106,10 @@ A and B have identical prompts, tools, safety checks and approval fixtures. **Th
 
 | Config | Completed / planned | Passed | Failed completed | Infrastructure errors | Live responses | Genuine cache replays |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| A | 2/16 | 1 | 1 | 1 | 15 | 0 |
-| B | 2/16 | 2 | 0 | 0 | 0 | 12 |
+| A | 16/16 | 11 | 5 | 0 | 45 | 3 |
+| B | 16/16 | 13 | 3 | 0 | 0 | 48 |
 
-These partial counts are not a completed-suite pass rate. B may replay A's genuine responses while rerunning real tools on a fresh database, making this a controlled output-layer comparison—not independent fresh sampling. `k=1` does not establish pass^3 reliability.
+All planned runs completed; failed graders remain in the evidence. B may replay A's genuine responses while rerunning real tools on a fresh database, making this a controlled output-layer comparison—not independent fresh sampling. `k=1` does not establish pass^3 reliability.
 
 Observed issues include invented follow-up promises, wrong-language wording and an overbroad ID redaction pattern masking an inspection reference. The trusted renderer fixes booking confirmations; broader policy/refusal language remains model-generated. The same graders apply to A and B; grading limitations and infrastructure errors stay visible.
 
@@ -132,7 +132,7 @@ The isolated unsafe control wrote 1 sensitive local-outbox row; the actual defen
 
 ## Limitations and next steps
 
-Finish all evaluation tasks before final submission. Free-model quota/availability can interrupt execution; the resume command preserves progress. The API has isolated demo databases, not a shared authoritative municipal backend. There is no public hosting, production identity, TLS gateway, comprehensive PII detector or comprehensive red-team assurance. HTTP protocol, restart persistence and real-MCP approval are tested offline; live-provider HTTP chat remains unverified until quota is available.
+Rehearse an actual human-approved live demonstration before presenting; evaluation consent was scripted. Free-model quota/availability can interrupt execution; the resume command preserves progress. The API has isolated demo databases, not a shared authoritative municipal backend. There is no public hosting, production identity, TLS gateway, comprehensive PII detector or comprehensive red-team assurance. A live-provider HTTP chat smoke test passed (real local server, provider chat and clean shutdown); it does not establish live HTTP booking approval.
 
 ## Provenance
 

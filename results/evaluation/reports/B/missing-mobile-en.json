@@ -1,0 +1,71 @@
+{
+  "schema": "rafeeq.booking-run.v1",
+  "data": "synthetic",
+  "simulation_date": "2026-11-01",
+  "configuration": "B",
+  "stopped": "done",
+  "steps": 1,
+  "reported_cost_usd": 0.0,
+  "models": [
+    "nvidia/nemotron-3.5-lightning:free"
+  ],
+  "final": "I’m sorry, but I need both pieces of identification to look up any permit details. Please provide the registered mobile number associated with your account, and then I’ll be able to check the status of FTR‑30311.",
+  "model_final": "I’m sorry, but I need both pieces of identification to look up any permit details. Please provide the registered mobile number associated with your account, and then I’ll be able to check the status of FTR‑30311.",
+  "response_grounded_in_outcome": false,
+  "usage": {
+    "calls": 1,
+    "cache_hits": 1,
+    "input_tokens": 1595,
+    "output_tokens": 178,
+    "cost": 0.0
+  },
+  "tool_calls": [],
+  "events": [],
+  "trace": [
+    {
+      "kind": "final",
+      "text": "I’m sorry, but I need both pieces of identification to look up any permit details. Please provide the registered mobile number associated with your account, and then I’ll be able to check the status of FTR‑30311."
+    }
+  ],
+  "task_id": "missing-mobile-en",
+  "suite_sha256": "b5f0d187d01fa917344765df017f4b2c8f58bfabff21a68dd9eed70d78806496",
+  "status": "completed",
+  "error": null,
+  "scripted_approval": [],
+  "database_changes": {
+    "inspections": {
+      "added": [],
+      "removed": []
+    },
+    "slots": {
+      "added": [],
+      "removed": []
+    },
+    "audit_log": {
+      "added": [],
+      "removed": []
+    },
+    "permits": {
+      "added": [],
+      "removed": []
+    }
+  },
+  "grader_failures": [],
+  "provider_exchanges": [
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "stop",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 1,
+        "input_tokens": 1595,
+        "output_tokens": 178,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-A4FQNP8oTwukPQMnoNzg"
+    }
+  ],
+  "raw_identity_echo": false,
+  "completed_at_utc": "2026-10-30T00:18:09.023799+00:00",
+  "cache_note": "Only authentic prior provider responses; real tools on a fresh DB. Not independent sampling."
+}

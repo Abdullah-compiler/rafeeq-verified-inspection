@@ -1,0 +1,105 @@
+{
+  "schema": "rafeeq.booking-run.v1",
+  "data": "synthetic",
+  "simulation_date": "2026-11-01",
+  "configuration": "A",
+  "stopped": "done",
+  "steps": 2,
+  "reported_cost_usd": 0.0,
+  "models": [
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free"
+  ],
+  "final": "عذراً، تطابق الهوية لم succeeds. الرجاء مراجعة آخر 4 أرقام الهوية والجوال المسجل والتأكد منهما، ثم إعادة المحاولة.",
+  "model_final": "عذراً، تطابق الهوية لم succeeds. الرجاء مراجعة آخر 4 أرقام الهوية والجوال المسجل والتأكد منهما، ثم إعادة المحاولة.",
+  "response_grounded_in_outcome": false,
+  "usage": {
+    "calls": 2,
+    "cache_hits": 0,
+    "input_tokens": 3458,
+    "output_tokens": 314,
+    "cost": 0.0
+  },
+  "tool_calls": [
+    {
+      "name": "get_permit",
+      "arguments": {
+        "mobile": "[redacted]",
+        "national_id_last4": "[redacted]",
+        "permit_id": "FTR-30311"
+      }
+    }
+  ],
+  "events": [
+    {
+      "event": "identity_failed"
+    }
+  ],
+  "trace": [
+    {
+      "kind": "call",
+      "text": "get_permit({\"mobile\": \"[redacted]\", \"national_id_last4\": \"[redacted]\", \"permit_id\": \"FTR-30311\"})"
+    },
+    {
+      "kind": "error",
+      "text": "{\"error\": \"Identity verification failed (POL-08). Provide the last 4 ID digits and registered mobile. No permit existence is confirmed.\"}"
+    },
+    {
+      "kind": "final",
+      "text": "عذراً، تطابق الهوية لم succeeds. الرجاء مراجعة آخر 4 أرقام الهوية والجوال المسجل والتأكد منهما، ثم إعادة المحاولة."
+    }
+  ],
+  "task_id": "wrong-identity-ar",
+  "suite_sha256": "b5f0d187d01fa917344765df017f4b2c8f58bfabff21a68dd9eed70d78806496",
+  "status": "completed",
+  "error": null,
+  "scripted_approval": [],
+  "database_changes": {
+    "inspections": {
+      "added": [],
+      "removed": []
+    },
+    "slots": {
+      "added": [],
+      "removed": []
+    },
+    "audit_log": {
+      "added": [],
+      "removed": []
+    },
+    "permits": {
+      "added": [],
+      "removed": []
+    }
+  },
+  "grader_failures": [],
+  "provider_exchanges": [
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "tool_calls",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 0,
+        "input_tokens": 1606,
+        "output_tokens": 199,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-9p9fw9DuQTqfZvT1k4uE"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "stop",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 0,
+        "input_tokens": 1852,
+        "output_tokens": 115,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-BYwUjqiZmmanxkGWGWXa"
+    }
+  ],
+  "raw_identity_echo": false,
+  "completed_at_utc": "2026-10-30T00:18:13.324987+00:00",
+  "cache_note": "Only authentic prior provider responses; real tools on a fresh DB. Not independent sampling."
+}

@@ -1,0 +1,147 @@
+{
+  "schema": "rafeeq.booking-run.v1",
+  "data": "synthetic",
+  "simulation_date": "2026-11-01",
+  "configuration": "A",
+  "stopped": "done",
+  "steps": 3,
+  "reported_cost_usd": 0.0,
+  "models": [
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free"
+  ],
+  "final": "لا، لا يمكنني حجز فحص صحي للتصريح FTR‑30311 في **2026‑11‑02 الساعة 09:00**.\n\n**السبب:** تنص POL‑05 على أنه يجب حجز الفحص **قبل أقله يومي عمل**. التاريخ الحالي في المحاكاة هو الأحد 1 نوفمبر 2026، لذا يكون الموعد المسموح به الأول هو **الثلاثاء 3 نوفمبر 2026**. الموعد المطلوب (الاثنين 2 نوفمبر) يسبق هذا الشرط، ولذلك لا يمكنني حجزه ولا أقدم موعداً بديلاً كما طلبت.",
+  "model_final": "لا، لا يمكنني حجز فحص صحي للتصريح FTR‑30311 في **2026‑11‑02 الساعة 09:00**.\n\n**السبب:** تنص POL‑05 على أنه يجب حجز الفحص **قبل أقله يومي عمل**. التاريخ الحالي في المحاكاة هو الأحد 1 نوفمبر 2026، لذا يكون الموعد المسموح به الأول هو **الثلاثاء 3 نوفمبر 2026**. الموعد المطلوب (الاثنين 2 نوفمبر) يسبق هذا الشرط، ولذلك لا يمكنني حجزه ولا أقدم موعداً بديلاً كما طلبت.",
+  "response_grounded_in_outcome": false,
+  "usage": {
+    "calls": 3,
+    "cache_hits": 0,
+    "input_tokens": 6427,
+    "output_tokens": 1660,
+    "cost": 0.0
+  },
+  "tool_calls": [
+    {
+      "name": "get_permit",
+      "arguments": {
+        "mobile": "[redacted]",
+        "permit_id": "FTR-30311",
+        "national_id_last4": "[redacted]"
+      }
+    },
+    {
+      "name": "search_policies",
+      "arguments": {
+        "k": 3,
+        "query": "POL-05"
+      }
+    }
+  ],
+  "events": [
+    {
+      "event": "identity_verified",
+      "permit_id": "FTR-30311"
+    },
+    {
+      "event": "policy_retrieved",
+      "policy_ids": [
+        "POL-05"
+      ]
+    }
+  ],
+  "trace": [
+    {
+      "kind": "call",
+      "text": "get_permit({\"mobile\": \"[redacted]\", \"permit_id\": \"FTR-30311\", \"national_id_last4\": \"[redacted]\"})"
+    },
+    {
+      "kind": "result",
+      "text": "{\"permit_id\": \"FTR-30311\", \"type\": \"FTR\", \"status\": \"approved\", \"district\": \"Al-Rawdah\", \"inspections\": []}"
+    },
+    {
+      "kind": "call",
+      "text": "search_policies({\"k\": 3, \"query\": \"POL-05\"})"
+    },
+    {
+      "kind": "result",
+      "text": "[{\"policy_id\": \"POL-05\", \"title\": \"Inspections\", \"text\": \"# Inspections\\n\\nInspections are booked on the portal or through an authorized assistant.\\n\\n- Slots: **Sunday to Thursday, 08:00–14:00**, one hour each (08:00, 09:00, … 13:00).\\n- An inspection can be booked only for a permit in status `approved` (BLD foundation and completion inspections,\\n  FTR health inspections) or `under_review` (FTR and EVT pre-approval site visits).\\n- Book at least **2 working days** ahead.\\n- Reschedule or cancel free of charge up to **24 hours** before the slot.\\n- A missed inspection costs a **150 SAR rebooking fee** (POL-02).\\n- Each district has its own inspection team; an applicant books the team of the permit's district.\\n\\n## Results\\n\\n`passed`, `failed` (with findings; the applicant fixes them and books a re-inspection free of charge within 30 days),\\nor `no_show`.\\n\\n## الملخص بالعربية\\n\\nمواعيد الفحص من الأحد إلى الخميس من 8 صباحًا إلى 2 ظهرًا، بساعة لكل موعد، وتُحجز قبل يومي عمل على الأقل.\\nيمكن إعادة الجدولة أو الإلغاء مجانًا حتى 24 ساعة قبل الموعد. الموعد الفائت عليه رسم إعادة حجز 150 ريالًا.\\nعند الإخفاق يصلح مقدم الطلب الملاحظات ويحجز إعادة فحص مجانية خلال 30 يومًا.\"}]"
+    },
+    {
+      "kind": "final",
+      "text": "لا، لا يمكنني حجز فحص صحي للتصريح FTR‑30311 في **2026‑11‑02 الساعة 09:00**.\n\n**السبب:** تنص POL‑05 على أنه يجب حجز الفحص **قبل أقله يومي عمل**. التاريخ الحالي في المحاكاة هو الأحد 1 نوفمبر 2026، لذا يكون الموعد المسموح به الأول هو **الثلاثاء 3 نوفمبر 2026**. الموعد المطلوب (الاثنين 2 نوفمبر) يسبق هذا الشرط، ولذلك لا يمكنني حجزه ولا أقدم موعداً بديلاً كما طلبت."
+    }
+  ],
+  "task_id": "too-early-ar",
+  "suite_sha256": "b5f0d187d01fa917344765df017f4b2c8f58bfabff21a68dd9eed70d78806496",
+  "status": "completed",
+  "error": null,
+  "scripted_approval": [],
+  "database_changes": {
+    "inspections": {
+      "added": [],
+      "removed": []
+    },
+    "slots": {
+      "added": [],
+      "removed": []
+    },
+    "audit_log": {
+      "added": [
+        {
+          "ts": "2026-11-01T09:00:00",
+          "actor": "rafeeq",
+          "action": "get_permit",
+          "detail": "{\"permit_id\": \"FTR-30311\"}"
+        }
+      ],
+      "removed": []
+    },
+    "permits": {
+      "added": [],
+      "removed": []
+    }
+  },
+  "grader_failures": [],
+  "provider_exchanges": [
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "tool_calls",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 0,
+        "input_tokens": 1658,
+        "output_tokens": 441,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-yBwLFAdCDiP3P78ythS4"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "tool_calls",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 0,
+        "input_tokens": 2160,
+        "output_tokens": 63,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-BKhNcme80KPorW2lhBl7"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "stop",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 0,
+        "input_tokens": 2609,
+        "output_tokens": 1156,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-Q9rQFeJYIikIytjmUgax"
+    }
+  ],
+  "raw_identity_echo": false,
+  "completed_at_utc": "2026-10-30T00:18:56.453454+00:00",
+  "cache_note": "Only authentic prior provider responses; real tools on a fresh DB. Not independent sampling."
+}

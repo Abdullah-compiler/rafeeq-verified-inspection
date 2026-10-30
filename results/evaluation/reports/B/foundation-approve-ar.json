@@ -1,0 +1,294 @@
+{
+  "schema": "rafeeq.booking-run.v1",
+  "data": "synthetic",
+  "simulation_date": "2026-11-01",
+  "configuration": "B",
+  "stopped": "done",
+  "steps": 6,
+  "reported_cost_usd": 0.0,
+  "models": [
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3.5-lightning:free"
+  ],
+  "final": "تم حجز فحص الأساسات بعد الموافقة البشرية.\nرقم الفحص: INS-9002\nالتصريح: BLD-20981\nالموعد: 2026-11-05 11:00\nالحي: Al-Malqa\nتم التحقق من تسجيل الحجز في قاعدة البيانات. (POL-05)",
+  "model_final": "تم حجز فحص أسس جديد للتصريح BLD‑20981 في **٢٠٢٦‑١١‑٠٥ الساعة ١١:٠٠** في منطقة‑ malqa.\n\n**السياسة المعتمدة:**  \n- تم الاستناد إلى سياسة **POL‑05** الخاصة بمواعيد الفحص (الأحد‑الخميس ٨:٠٠‑١٤:٠٠، ويُحجز قبل يومَي عمل على الأقل).  \n- تم التحقق من الهوية (آخر ٤ أرقام الهوية [redacted]، والجوال المسجل [redacted]) قبل الحجز (POL‑08).  \n\nهذا الحجز **إضافى** ولا يؤثر على الحجز السابق (الفحص القديم ٢٠٢٦‑١١‑٠٣ ١٠:٠٠).",
+  "response_grounded_in_outcome": true,
+  "usage": {
+    "calls": 6,
+    "cache_hits": 6,
+    "input_tokens": 16912,
+    "output_tokens": 1263,
+    "cost": 0.0
+  },
+  "tool_calls": [
+    {
+      "name": "get_permit",
+      "arguments": {
+        "permit_id": "BLD-20981",
+        "national_id_last4": "[redacted]",
+        "mobile": "[redacted]"
+      }
+    },
+    {
+      "name": "list_slots",
+      "arguments": {
+        "district": "Al-Malqa",
+        "date_to": "2026-11-30",
+        "date_from": "2026-11-01"
+      }
+    },
+    {
+      "name": "book_inspection",
+      "arguments": {
+        "permit_id": "BLD-20981",
+        "slot": "2026-11-05 11:00"
+      }
+    },
+    {
+      "name": "search_policies",
+      "arguments": {
+        "query": "POL-05 inspection booking",
+        "k": 1
+      }
+    },
+    {
+      "name": "book_inspection",
+      "arguments": {
+        "permit_id": "BLD-20981",
+        "slot": "2026-11-05 11:00"
+      }
+    }
+  ],
+  "events": [
+    {
+      "event": "identity_verified",
+      "permit_id": "BLD-20981"
+    },
+    {
+      "event": "slots_listed",
+      "district": "Al-Malqa",
+      "count": 24
+    },
+    {
+      "event": "policy_retrieved",
+      "policy_ids": [
+        "POL-05"
+      ]
+    },
+    {
+      "event": "approval_decision",
+      "approved": true,
+      "permit_id": "BLD-20981",
+      "slot": "2026-11-05 11:00",
+      "district": "Al-Malqa",
+      "kind": "foundation"
+    },
+    {
+      "event": "booking_committed",
+      "inspection_id": "INS-9002",
+      "permit_id": "BLD-20981",
+      "slot": "2026-11-05 11:00",
+      "district": "Al-Malqa",
+      "kind": "foundation",
+      "status": "booked"
+    }
+  ],
+  "trace": [
+    {
+      "kind": "call",
+      "text": "get_permit({\"permit_id\": \"BLD-20981\", \"national_id_last4\": \"[redacted]\", \"mobile\": \"[redacted]\"})"
+    },
+    {
+      "kind": "result",
+      "text": "{\"permit_id\": \"BLD-20981\", \"type\": \"BLD\", \"status\": \"approved\", \"district\": \"Al-Malqa\", \"inspections\": [{\"inspection_id\": \"INS-9001\", \"kind\": \"foundation\", \"slot\": \"2026-11-03 10:00\", \"status\": \"booked\"}]}"
+    },
+    {
+      "kind": "call",
+      "text": "list_slots({\"district\": \"Al-Malqa\", \"date_to\": \"2026-11-30\", \"date_from\": \"2026-11-01\"})"
+    },
+    {
+      "kind": "result",
+      "text": "[\"2026-11-03 09:00\", \"2026-11-03 11:00\", \"2026-11-03 12:00\", \"2026-11-03 13:00\", \"2026-11-04 08:00\", \"2026-11-04 10:00\", \"2026-11-04 13:00\", \"2026-11-05 11:00\", \"2026-11-05 13:00\", \"2026-11-08 09:00\", \"2026-11-08 11:00\", \"2026-11-08 13:00\", \"2026-11-09 13:00\", \"2026-11-10 09:00\", \"2026-11-10 10:00\", \"2026-11-10 12:00\", \"2026-11-10 13:00\", \"2026-11-11 08:00\", \"2026-11-11 09:00\", \"2026-11-11 10:00\", \"2026-11-11 12:00\", \"2026-11-12 08:00\", \"2026-11-12 11:00\", \"2026-11-12 12:00\"]"
+    },
+    {
+      "kind": "call",
+      "text": "book_inspection({\"permit_id\": \"BLD-20981\", \"slot\": \"2026-11-05 11:00\"})"
+    },
+    {
+      "kind": "error",
+      "text": "{\"error\": \"Retrieve the inspection policy POL-05 with search_policies first.\"}"
+    },
+    {
+      "kind": "call",
+      "text": "search_policies({\"query\": \"POL-05 inspection booking\", \"k\": 1})"
+    },
+    {
+      "kind": "result",
+      "text": "[{\"policy_id\": \"POL-05\", \"title\": \"Inspections\", \"text\": \"# Inspections\\n\\nInspections are booked on the portal or through an authorized assistant.\\n\\n- Slots: **Sunday to Thursday, 08:00–14:00**, one hour each (08:00, 09:00, … 13:00).\\n- An inspection can be booked only for a permit in status `approved` (BLD foundation and completion inspections,\\n  FTR health inspections) or `under_review` (FTR and EVT pre-approval site visits).\\n- Book at least **2 working days** ahead.\\n- Reschedule or cancel free of charge up to **24 hours** before the slot.\\n- A missed inspection costs a **150 SAR rebooking fee** (POL-02).\\n- Each district has its own inspection team; an applicant books the team of the permit's district.\\n\\n## Results\\n\\n`passed`, `failed` (with findings; the applicant fixes them and books a re-inspection free of charge within 30 days),\\nor `no_show`.\\n\\n## الملخص بالعربية\\n\\nمواعيد الفحص من الأحد إلى الخميس من 8 صباحًا إلى 2 ظهرًا، بساعة لكل موعد، وتُحجز قبل يومي عمل على الأقل.\\nيمكن إعادة الجدولة أو الإلغاء مجانًا حتى 24 ساعة قبل الموعد. الموعد الفائت عليه رسم إعادة حجز 150 ريالًا.\\nعند الإخفاق يصلح مقدم الطلب الملاحظات ويحجز إعادة فحص مجانية خلال 30 يومًا.\"}]"
+    },
+    {
+      "kind": "call",
+      "text": "book_inspection({\"permit_id\": \"BLD-20981\", \"slot\": \"2026-11-05 11:00\"})"
+    },
+    {
+      "kind": "result",
+      "text": "{\"inspection_id\": \"INS-9002\", \"permit_id\": \"BLD-20981\", \"slot\": \"2026-11-05 11:00\", \"district\": \"Al-Malqa\", \"kind\": \"foundation\", \"status\": \"booked\"}"
+    },
+    {
+      "kind": "final",
+      "text": "تم حجز فحص أسس جديد للتصريح BLD‑20981 في **٢٠٢٦‑١١‑٠٥ الساعة ١١:٠٠** في منطقة‑ malqa.\n\n**السياسة المعتمدة:**  \n- تم الاستناد إلى سياسة **POL‑05** الخاصة بمواعيد الفحص (الأحد‑الخميس ٨:٠٠‑١٤:٠٠، ويُحجز قبل يومَي عمل على الأقل).  \n- تم التحقق من الهوية (آخر ٤ أرقام الهوية [redacted]، والجوال المسجل [redacted]) قبل الحجز (POL‑08).  \n\nهذا الحجز **إضافى** ولا يؤثر على الحجز السابق (الفحص القديم ٢٠٢٦‑١١‑٠٣ ١٠:٠٠)."
+    }
+  ],
+  "task_id": "foundation-approve-ar",
+  "suite_sha256": "b5f0d187d01fa917344765df017f4b2c8f58bfabff21a68dd9eed70d78806496",
+  "status": "completed",
+  "error": null,
+  "scripted_approval": [
+    {
+      "source": "scripted task fixture; not an actual human",
+      "approved": true,
+      "tool": "book_inspection",
+      "proposal": {
+        "permit_id": "BLD-20981",
+        "slot": "2026-11-05 11:00",
+        "district": "Al-Malqa",
+        "kind": "foundation"
+      }
+    }
+  ],
+  "database_changes": {
+    "inspections": {
+      "added": [
+        {
+          "inspection_id": "INS-9002",
+          "permit_id": "BLD-20981",
+          "kind": "foundation",
+          "slot": "2026-11-05 11:00",
+          "district": "Al-Malqa",
+          "status": "booked",
+          "findings": null
+        }
+      ],
+      "removed": []
+    },
+    "slots": {
+      "added": [
+        {
+          "district": "Al-Malqa",
+          "slot": "2026-11-05 11:00",
+          "taken": 1
+        }
+      ],
+      "removed": [
+        {
+          "district": "Al-Malqa",
+          "slot": "2026-11-05 11:00",
+          "taken": 0
+        }
+      ]
+    },
+    "audit_log": {
+      "added": [
+        {
+          "ts": "2026-11-01T09:00:00",
+          "actor": "rafeeq",
+          "action": "get_permit",
+          "detail": "{\"permit_id\": \"BLD-20981\"}"
+        },
+        {
+          "ts": "2026-11-01T09:00:00",
+          "actor": "rafeeq",
+          "action": "book_inspection",
+          "detail": "{\"permit_id\": \"BLD-20981\", \"slot\": \"2026-11-05 11:00\", \"district\": \"Al-Malqa\", \"kind\": \"foundation\"}"
+        }
+      ],
+      "removed": []
+    },
+    "permits": {
+      "added": [],
+      "removed": []
+    }
+  },
+  "grader_failures": [],
+  "provider_exchanges": [
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "tool_calls",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 1,
+        "input_tokens": 1648,
+        "output_tokens": 449,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-Ww7ZhTRKkoW1QNxVN4ub"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "tool_calls",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 1,
+        "input_tokens": 2207,
+        "output_tokens": 172,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-4ACQZrL2KVciXQIheH0B"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "tool_calls",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 1,
+        "input_tokens": 2827,
+        "output_tokens": 147,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-2H7uvxdADLC0G3vj1HbK"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "tool_calls",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 1,
+        "input_tokens": 3010,
+        "output_tokens": 77,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-to849rRJ4yVDVpUfRULL"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "tool_calls",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 1,
+        "input_tokens": 3473,
+        "output_tokens": 185,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-DcpriPndB8yj1RbUHNAp"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "finish_reason": "stop",
+      "usage": {
+        "calls": 1,
+        "cache_hits": 1,
+        "input_tokens": 3747,
+        "output_tokens": 233,
+        "cost": 0.0
+      },
+      "response_id": "gen-[redacted]-yvm6YVrGF4y7Tjnu0Mih"
+    }
+  ],
+  "raw_identity_echo": false,
+  "completed_at_utc": "2026-10-30T00:16:42.444175+00:00",
+  "cache_note": "Only authentic prior provider responses; real tools on a fresh DB. Not independent sampling."
+}

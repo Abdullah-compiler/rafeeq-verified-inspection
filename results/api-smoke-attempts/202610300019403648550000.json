@@ -1,0 +1,11 @@
+{
+  "recorded_at": "2026-10-30T00:19:40.364855+00:00",
+  "live_model_chat": true,
+  "verified": false,
+  "health_status": 200,
+  "unauthenticated_status": 401,
+  "create_status": 201,
+  "chat_status": 200,
+  "error": "AssertionError: ",
+  "server_stopped": true
+}

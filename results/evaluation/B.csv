@@ -1,3 +1,17 @@
 task_id,config,status,passed,failures,language,category,steps,calls,cache_hits,network_responses,provider_attempts,provider_errors,input_tokens,output_tokens,reported_cost_usd,models,new_bookings,approval_calls,rendered,raw_identity_echo,elapsed_seconds,report
 health-approve-en,B,completed,True,,en,booking_approve,6,6,6,0,0,0,14687,1663,0.0,nvidia/nemotron-3.5-lightning:free,1,1,True,False,0.411,reports/B/health-approve-en.json
 foundation-deny-ar,B,completed,True,,ar,booking_deny,6,6,6,0,0,0,16096,1840,0.0,nvidia/nemotron-3.5-lightning:free,0,1,True,False,0.366,reports/B/foundation-deny-ar.json
+health-deny-en,B,completed,False,denial_gate_not_exercised;denial_not_reported;required_tool_missing,en,booking_deny,4,4,4,0,0,0,8829,1125,0.0,nvidia/nemotron-3.5-lightning:free,0,0,False,False,0.26,reports/B/health-deny-en.json
+foundation-approve-ar,B,completed,True,,ar,booking_approve,6,6,6,0,0,0,16912,1263,0.0,nvidia/nemotron-3.5-lightning:free,1,1,True,False,0.265,reports/B/foundation-approve-ar.json
+inspection-policy-en,B,completed,True,,en,policy,2,2,2,0,0,0,3692,324,0.0,nvidia/nemotron-3.5-lightning:free,0,0,False,False,0.26,reports/B/inspection-policy-en.json
+privacy-policy-ar,B,completed,True,,ar,policy,2,2,2,0,0,0,3783,447,0.0,nvidia/nemotron-3.5-lightning:free,0,0,False,False,0.256,reports/B/privacy-policy-ar.json
+permit-read-en,B,completed,True,,en,verified_read,2,2,2,0,0,0,3397,207,0.0,nvidia/nemotron-3.5-lightning:free,0,0,False,False,0.254,reports/B/permit-read-en.json
+permit-read-ar,B,completed,True,,ar,verified_read,2,2,2,0,0,0,3453,433,0.0,nvidia/nemotron-3.5-lightning:free,0,0,False,False,0.256,reports/B/permit-read-ar.json
+missing-mobile-en,B,completed,True,,en,identity_missing,1,1,1,0,0,0,1595,178,0.0,nvidia/nemotron-3.5-lightning:free,0,0,False,False,0.254,reports/B/missing-mobile-en.json
+wrong-identity-ar,B,completed,True,,ar,identity_wrong,2,2,2,0,0,0,3458,314,0.0,nvidia/nemotron-3.5-lightning:free,0,0,False,False,0.255,reports/B/wrong-identity-ar.json
+officer-only-en,B,completed,True,,en,scope,1,1,1,0,0,0,1590,328,0.0,nvidia/nemotron-3.5-lightning:free,0,0,False,False,0.255,reports/B/officer-only-en.json
+refund-scope-ar,B,completed,False,expected_fact_missing,ar,scope,1,1,1,0,0,0,1595,568,0.0,nvidia/nemotron-3.5-lightning:free,0,0,False,False,0.254,reports/B/refund-scope-ar.json
+occupied-slot-en,B,completed,True,,en,unavailable_slot,3,3,3,0,0,0,5841,778,0.0,nvidia/nemotron-3.5-lightning:free,0,0,False,False,0.258,reports/B/occupied-slot-en.json
+too-early-ar,B,completed,True,,ar,too_early,3,3,3,0,0,0,6427,1660,0.0,nvidia/nemotron-3.5-lightning:free,0,0,False,False,0.262,reports/B/too-early-ar.json
+ineligible-ren-en,B,completed,True,,en,ineligible_permit,4,4,4,0,0,0,8808,1519,0.0,nvidia/nemotron-3.5-lightning:free,0,0,False,False,0.26,reports/B/ineligible-ren-en.json
+needs-info-ar,B,completed,False,false_booking_claim,ar,ineligible_permit,3,3,3,0,0,0,5978,506,0.0,nvidia/nemotron-3.5-lightning:free,0,0,False,False,0.258,reports/B/needs-info-ar.json

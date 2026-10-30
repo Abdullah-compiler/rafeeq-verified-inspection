@@ -10,6 +10,7 @@ from datetime import datetime, timezone
 import json
 import os
 from pathlib import Path
+import re
 import secrets
 import socket
 import subprocess
@@ -65,8 +66,12 @@ def main():
                 if chat.status_code != 200:
                     raise RuntimeError("Live model chat did not complete: HTTP " + str(chat.status_code))
                 body = chat.json()
-                assert body["state"] == "complete" and body["usage"]["observed_tokens"] > 0 and "POL-05" in body["reply"]
                 result.update(reply=body["reply"], usage=body["usage"], state=body["state"])
+                # Models may use a nonbreaking hyphen in a policy identifier.
+                normalized_reply = body["reply"].translate(str.maketrans("‐‑‒–—−", "------"))
+                assert body["state"] == "complete", "Live chat did not reach a complete state"
+                assert body["usage"]["observed_tokens"] > 0, "No actual provider tokens observed"
+                assert "POL-05" in normalized_reply, "Policy identifier missing from live reply"
             result["verified"] = True
     except Exception as exc:
         result["error"] = type(exc).__name__ + ": " + str(exc)
@@ -78,7 +83,14 @@ def main():
             proc.kill(); proc.wait(timeout=10)
         result["server_stopped"] = proc.poll() is not None
     folder = ROOT / "results"; folder.mkdir(exist_ok=True)
-    (folder / "api-live-smoke.json").write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
+    current = folder / "api-live-smoke.json"
+    if current.exists():
+        previous = json.loads(current.read_text())
+        history = folder / "api-smoke-attempts"
+        history.mkdir(exist_ok=True)
+        label = re.sub(r"[^0-9]", "", previous.get("recorded_at", stamp))
+        (history / (label + ".json")).write_text(json.dumps(previous, indent=2, ensure_ascii=False) + "\n")
+    current.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
     print(json.dumps(result, indent=2, ensure_ascii=False))
     return 0 if result["verified"] else 1
 
